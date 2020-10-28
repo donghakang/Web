@@ -397,12 +397,8 @@
     </iframe>
 </body>
 ```
-<body>
-    <!-- iframe: html에서 일정한 영역을 할당해서 삽입하는 프레임 -->
-    <iframe src="http://www.facebook.com" width="200px" height="300px">
-        <p>이 브라우저는 iframe을 지원하지 않습니다.</p>
-    </iframe>
-</body>
+
+<img src="image/iframe.png">
 
 ---
 
@@ -410,22 +406,44 @@
 
 Form: 정보를 입력 또는 선택하고 버튼을 클릭하며 정보를 서버에 전달하고 응답 받는 양방향의 의사소통을 지원하는 입력양식.
 
-- ```Input```
-
+***INPUT***
 ```html
 <body>
-    아이디: <input type="text" name="id" size="20">
-    비밀번호: <input type="text" name="pwd" size="20">
-    <input type="button" value="목록">
-    <input type="submit" value="전송">
-    <input type="reset" value="취소">
+    <form action="idOk.html" method="get">
+        아이디: <input type="text" name="id" size="20">
+        비밀번호: <input type="text" name="pwd" size="20">
+        <input type="button" value="목록">
+        <input type="submit" value="전송">
+        <input type="reset" value="취소">
+    </form>
 </body>
 ```
 
+```html
 <body>
-    아이디: <input type="text" name="id" size="20">
-    비밀번호: <input type="text" name="pwd" size="20">
-    <input type="button" value="목록">
-    <input type="submit" value="전송">
-    <input type="reset" value="취소">
+나의 아이디는 admin이고<br>
+비밀번호는 1234입니다.<br>
+<a href="ex01_18.html">이전으로</a>
 </body>
+```
+
+<img src="image/input.png">
+
+**form의 method**
+> 클라이언트의 데이터를 서버로 보내기 위한 방법을 설정합니다. get(기본값)은 폼의 내용을 서버로 전송할 때 255바이트 이하까지 만 전송할 수 있고 주소표시줄에 전송되는 값이 노출됩니다. post은 폼의 내용을 서버로 전송할 때 255바이트보다 크거나 보안 이 필요한 데이터를 보낼 때 설정합니다.
+- ```method="get"``` = Query에 그대로 아이디를 가져온다
+  - ```http://127.0.0.1:5500/WebContent/idOk.html?id=admin&pwd=1234```
+- ```method="post"``` = Query에 정보를 표시 하지 않는다.
+  - ```http://127.0.0.1:5500/WebContent/idOk.html```
+
+:arrow_right: 전송을 누르면, idOk.html로 이동을 한다.
+
+**input의 type**
+- ```button```
+- ```submit```
+- ```cancel```
+- ```checkbox```
+- ```radio```
+
+ex01_\#19, ex01_\#20
+
