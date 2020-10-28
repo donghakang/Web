@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        회원가입
+    </title>
+</head>
+
+<body>
+    <table border="1">
+        <caption align="center" style="font-size: x-large;">회 원 가 입</h1>
+        <tr>
+            <td colspan="2" align="center" style="color: yellow; background-color: blue;"> 기본정보</td>
+        </tr>
+        <tr>
+            <th>회원아이디</th>
+            <td>
+                <input type="text" name="id" size="20">
+                <input type="button" value="ID중복확인">
+                영문소문자/숫자조합3~8자
+            </td> 
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td>
+                <input type="text" name="pwd" size="20">
+                영문소문자/숫자조합3~8자
+            </td>
+        </tr>
+        <tr>
+            <th>비밀번호확인</th>
+            <td>
+                <input type="text" name="pwd" size="20">
+                비밀번호확인
+            </td>
+        </tr>
+        <tr>
+            <th> E-Mail </th>
+            <td>
+                <input type="text" name="emailID" size="10">@
+                <select name="emailAddr">
+                    <option value="naver">naver.com</option>
+                    <option value="hanmail">hanmail.com</option>
+                    <option value="gmail">gmail.com</option>
+                    <option value="hotmail">hotmail.com</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" style="color: yellow; background-color: blue;">개인신상정보</td>
+        </tr>
+
+        <tr>
+            <th>한글이름</th>
+            <td><input type="text" name="korName" size="20"> 성과 이름을 붙여주세요 (예)홍길동
+            </td>
+        </tr>
+        <tr>
+            <th>주민등록번호</th>
+            <td>
+                <input type="text" name="firstBirth" size="10"> - 
+                <input type="text" name="lastBirth" size="10">
+                <input type="button" value="주민번호체크">
+                비밀번호 분실시 이용됩니다.
+            </td>
+        </tr>
+        <tr>
+            <th>실제생년월일</th>
+            <td>
+                <form action="">
+                    <input type="radio" name="birth"> 양력
+                    <input type="radio" name="birth"> 음력
+                    <input type="text" name="inputBirth" size="10"> 
+                    예) 2000/05/22
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td>
+                <select name="homeNumber">
+                    <option value="02">02</option>
+                    <option value="031">031</option>
+                    <option value="032">032</option>
+                    <option value="051">051</option>
+                    <option value="055">055</option>
+                </select>
+                -
+                <input type="text" name="secondHomeNumber" size="5">
+                -
+                <input type="text" name="lastHomeNumber" size="5">
+                예) 051-000-0000
+            </td>
+        </tr>
+        <tr>
+            <th>휴대전화</th>
+            <td>
+                <select name="homeNumber">
+                    <option value="010">02</option>
+                    <option value="011">011</option>
+                    <option value="012">012</option>
+                    <option value="016">016</option>
+                    <option value="017">017</option>
+                </select>
+                -
+                <input type="text" name="secondPhoneNumber" size="5">
+                -
+                <input type="text" name="lastPhoneNumber" size="5">
+                예) 051-000-0000
+            </td>
+        </tr>
+        <tr>
+            <th>우편번호</th>
+            <td>
+                <input type="text" name="FirstAddrCode" size="5">
+                - 
+                <input type="text" name="LastAddrCode"  size="5">
+                <input type="button" value="우편번호검색">
+            </td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td><input type="text" name="addr" size="50"></td>
+        </tr>
+        <tr>
+            <td style="background-color: purple"; colspan="2" align="center">
+                <input type="button" value="확인">
+                <a href="task_01.html" type="cancel">취소</a>
+            </td>
+        </tr>
+    </table>
+
+
+    <form action="/action_page.php">
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      
+        <br>  
+
+      </form>
+
+</body>
+
+</html>
