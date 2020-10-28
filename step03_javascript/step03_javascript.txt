@@ -1,0 +1,107 @@
+step03_javascript   --Dynamic Web Project
+                      Context root : lab
+                      Content directory : web
+                      
+src
+
+web  -- html,css,javascript, jsp, image등등
+  image
+  audio
+  video
+  ex
+    ex03_01.html  --산술연산자
+    ex03_02.html  --논리연산자
+    ex03_03.html  --대입(할당)연산자
+    ex03_04.html  --논리연산자
+    ex03_05.html  --증감연산자
+    ex03_06.html  --문자결합연산자
+    ex03_07.html  --prompt / alert
+    ex03_08.html  --삼항연산자
+    ex03_09.html
+       IT점수를 입력하시오   <-- 75
+             일어점수를 입력하시오  <-- 80
+       
+             과목 평균은  ??.?? 입니다.   <-- document.write이용
+             
+    ex03_10.html   -- if
+            값을 입력하시오  <----  7 (switch를 이용해서 작성하시오)
+       7은 홀수 입니다. <----alert 
+       
+    ex03_11.html   -- if~else
+    ex03_12.html   -- if~else if
+    ex03_13.html   --switch
+    ex03_14.html   --switch
+    ex03_15.html   --switch
+    ex03_16.html   --for
+    ex03_17.html   --break/continue
+    ex03_18.html   --while
+    ex03_19.html   --do~while
+    ex03_20.html   --선언적함수
+    ex03_21.html   --익명함수
+    ex03_22.html   --encodeURI/decodeURI/eval/String
+    ex03_23.html   --isNaN / isFinite
+    ex03_24.html   --자바스크립트객체
+    ex03_25.html   --자바스크립트객체
+    ex03_26.html   --생성자함수
+    ex03_27.html   --Number, typeof
+    ex03_28.html   --문자열함수
+    ex03_29.html   --배열객체
+    ex03_30.html   --배열객체
+    ex03_31.html   --배열객체, 날짜함수
+    ex03_32.html   --수학함수
+    ex03_33.html / win1.html  --window 객체
+    ex03_34.html   --location 객체
+    ex03_35.html   --location 객체
+    ex03_36.html / test1.html / test2.html  --history 객체
+    ex03_37.html   --navigator 객체
+    ex03_38.html   --screen 객체
+    ex03_39.html   --getElementById
+    ex03_40.html   --getElementsByName
+    ex03_41.html   --getElementsByTagName
+    ex03_42.html   --근거리선택자
+    ex03_43.html   --근거리선택자
+    ex03_44.html   --노드 추가/삭제
+    ex03_45.html   --인라인 이벤트 모델
+    ex03_46.html   --고전 이벤트 모델
+    ex03_47.html   --표준 이벤트 모델
+    ex03_48.html   --표준 이벤트 모델(여러개의 핸들러 연결)
+    ex03_49.html   --JSON(객체)
+    ex03_50.html   --JSON(배열)
+    ex03_51.html   --JSON(응용)
+    ex03_52.html   --JSON(stringify, parse함수)
+    ex03_53.html   --정규표현식
+    ex03_54.html   --정규표현식
+    ex03_55.html   --수동슬라이드 (01.jpg/02.jpg/03.jpg/04.jpg)
+    ex03_56.html   --자동슬라이드
+    ex03_57.html   --callback 함수(callback.png참조)
+    
+  project1
+    image
+      
+    css
+      style.css   --복사
+    js
+      
+    index.html    --복사 (첫페이지)
+    login.html    --복사 (로그인)
+    join.html     --복사(회원가입)
+    joinView.html --복사 (회원가입 상세)
+    gallery.html  --복사 (갤러리 보기)
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  
+  
+  

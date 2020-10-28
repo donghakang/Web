@@ -1,0 +1,46 @@
+step01_html  --Dynamic Web Project
+  src               <-- 자바코드
+  
+  WebContent  <-- html,css,javascript,이미지,음악..
+     image       <--폴더
+         w3c.png
+         mouse.png    
+     audio
+     	laymov.mp3
+     video
+        tiger.mp4
+        
+     ex01_01.html 
+     ex01_02.html         
+     ex01_03.html
+     ex01_04.html
+     ex01_05.html
+     ex01_06.html
+     ex01_07.html
+     ex01_08.html
+     ex01_09.html
+     ex01_10.html
+     ex01_11.html
+     ex01_12.html
+     ex01_13.html
+     ex01_14.html
+     ex01_15.html
+     ex01_16.html
+     ex01_17.html
+     ex01_18.html
+     ex01_19.html
+     ex01_20.html
+     ex01_21.html
+     ex01_22.html
+     ex01_23.html
+     ex01_24.html
+     ex01_25.html
+     ex01_26.html
+     ex01_27.html
+     ex01_28.html
+     ex01_29.html
+     ex01_30.html
+     login.html
+     write.html
+     
+      
