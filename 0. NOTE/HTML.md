@@ -11,6 +11,8 @@
   - [리스트](#리스트)
   - [링크](#링크)
   - [테이블](#테이블)
+  - [iframe](#iframe)
+  - [Form Input](#form-input)
 
 ---
 
@@ -326,7 +328,14 @@
 --- 
 
 ## 테이블
-
+- ```tr```: 테이블 row, 한줄
+- ```th```: 테이블 헤드
+- ```td```: 테이블의 도큐먼트
+- ```thead```:  테이블 위에 둔다
+- ```tfoot```:  테이블 맨밑으로 옮긴다.
+- ```tbody```:  테이블의 몸둥아리
+- ```colspan```: 가로를 병합
+- ```rowspan```: 세로를 병합
 ```html
 <body>
 <table border="1">
@@ -351,3 +360,72 @@
 ```
 
 <img src="image/table.png" width=40%>
+
+```html
+<body>
+<table border="2">
+    <tr>
+        <th colspan="4">지상파 방송국</th>
+    </tr>
+    <tr>
+        <td rowspan="2">채널</td>
+        <td>KBS</td>
+        <td>MBC</td>
+        <td>SBS</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>11</td>
+        <td>6</td>
+    </tr>
+</table>
+</body>
+```
+
+<img src="image/table2.png" width=40%>
+
+---
+
+## iframe
+- ```iframe```: html에서 일정한 영역을 할당해서 삽입하는 프레임
+
+```html
+<body>
+    <!-- iframe: html에서 일정한 영역을 할당해서 삽입하는 프레임 -->
+    <iframe src="http://www.facebook.com" width="200px" height="300px">
+        <p>이 브라우저는 iframe을 지원하지 않습니다.</p>
+    </iframe>
+</body>
+```
+<body>
+    <!-- iframe: html에서 일정한 영역을 할당해서 삽입하는 프레임 -->
+    <iframe src="http://www.facebook.com" width="200px" height="300px">
+        <p>이 브라우저는 iframe을 지원하지 않습니다.</p>
+    </iframe>
+</body>
+
+---
+
+## Form Input 
+
+Form: 정보를 입력 또는 선택하고 버튼을 클릭하며 정보를 서버에 전달하고 응답 받는 양방향의 의사소통을 지원하는 입력양식.
+
+- ```Input```
+
+```html
+<body>
+    아이디: <input type="text" name="id" size="20">
+    비밀번호: <input type="text" name="pwd" size="20">
+    <input type="button" value="목록">
+    <input type="submit" value="전송">
+    <input type="reset" value="취소">
+</body>
+```
+
+<body>
+    아이디: <input type="text" name="id" size="20">
+    비밀번호: <input type="text" name="pwd" size="20">
+    <input type="button" value="목록">
+    <input type="submit" value="전송">
+    <input type="reset" value="취소">
+</body>
