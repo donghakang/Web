@@ -31,6 +31,25 @@
             margin-bottom: 10px;
             background-color: saddlebrown;
         }
+
+        /* 가상 클래스 */
+        /* h1 앞부분에 넣는다 */
+        h1::before {
+            content: "★";
+            color: salmon;
+        }
+        /* h1 맨뒤에 넣는다 */
+        h1::after {
+            content: "★";
+            color: blue;
+        }
+        /* p의 첫 글자만 적용한다 */
+        p::first-letter{
+            font-size: 25px;
+            background-color: gray;
+            color: white;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -44,6 +63,11 @@
         <a href="register.html" target="_top">회원가입</a>
         <br><br>
     </form>
+    <br>
+    <br>
+    <br>
+    <h1>Famous Saying</h1>
+    <p>The world is a beautiful book, but of little use to him who cannot read it.</p>
 </body>
 
 </html>

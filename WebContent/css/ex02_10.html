@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        /******형제 선택자*****/
+        /* h1 과 같이 있는 한 형제인 h2 만 빨간색으로 변한다 */
+        h1+h2 {
+            color: red;
+        }
+
+        /* h1 과 같이 있는 형제 h2 모두가 파랑식으로 변한다. */
+        h1~h2 {
+            background-color: yellow;
+        }
+
+        h1~h2:hover {
+            color: blue;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>have a nice day</h1>
+    <h2>have a nice day</h2>
+    <h2>have a nice day</h2>
+    <h3>have a nice day</h3>
+    <h2>have a nice day</h2>
 </body>
+
 </html>
