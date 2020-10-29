@@ -1,0 +1,12 @@
+b {
+    font-size: 20px;
+    color: blue;
+    font-style: bold;
+}
+
+u {
+    font-size: 20px;
+    font-family: cursive;
+    color: red;
+    font-style: italic;
+}

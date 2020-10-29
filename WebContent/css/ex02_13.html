@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>선택자의 우선순위</title>
+    <style>
+        /* 선택자의 우선순위 */
+        /* 인라인 > id(#) > class(.) > 일반태그 */
+        p{
+            font-size: 25px;
+            font-weight: bold;
+            color: green;
+        }
+        .t1{                            /* 클래스는 디자인에 주로 사용되며 큰 틀을 생각하면 된다.*/
+            font-size: 30px;
+            font-weight: bold;
+            color: pink;
+        }           
+        #t2{                            /* id는 id 와 pw 를 나누듯, 한페이지에 id는 중복이 나오면 안된다.*/
+            font-size: 15px;
+            font-weight: bold;
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="t1" id="t2">Good Morning</p>
+    <p class="t1">안녕하세요</p>
+    <p class="t1">Good Morning</p>
+    <p>안녕하세요</p>
+    <span class="t1" id="t2" style="color: aquamarine;">안녕하세요</span>
+</body>
+
+</html>
