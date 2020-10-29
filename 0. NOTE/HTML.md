@@ -447,3 +447,66 @@ Form: 정보를 입력 또는 선택하고 버튼을 클릭하며 정보를 서�
 
 ex01_\#19, ex01_\#20
 
+---
+
+## label, for 을 이용한 연결
+
+- ```label```: 요소간 연결관계를 설정한다.
+- ```for```: 연결하려는 태그의 id를 지정한다.
+
+```html
+<body>
+    <!-- label: 요소간 연결관계를 설정한다
+    for  : 연결하려는 태그의 id를 지정한다. -->
+    이름: <input type="text" name="name"><br><br>                <!-- 1 -->
+    
+    <label>이름: <input type="text" name="name"><br><br></label> <!-- 2 -->
+
+    <label for="myName">이름:</label>
+    <input type="text" name="name" id="myName">                  <!-- 3 -->   
+</body>
+```
+
+1번 같은경우, text 박스 안을 눌러야지만 선택이되지만<br>
+2,3번은 이름 박스 주변을 클릭해도된다 (\"이름\" 칸을 누르면 선택 된다.)
+
+---
+
+## Radio
+
+--- 
+
+## Div
+> section으로 나누어서, ID를 준다. 그러므로 크게 header나, section 이나, article 등으로 나누어서 더 편리하게 사용할 수 있게 도와준다.
+
+ex)
+
+```html
+<body>
+<div id="header">
+	<h1>Web Publisher</h1>
+</div>
+<div id="nav">
+	<ul>
+		<li><a href="#"> HTML5 </a>
+		<li><a href="#"> CSS3 </a>
+		<li><a href="#"> JAVASCRPT </a>
+		<li><a href="#"> jQuery </a>
+	</ul>
+</div>
+<div id="section">
+	<h2>HTML5이란?</h2>
+	<div id="article">1. HTML개요</div>
+	<div id="article">2. 문서구조</div>
+</div>
+<div id="aside">
+	<h3>보충설명</h3>
+	<p>
+		HTML5, CSS3, JavaScript는 front-end입니다<br> PHP, JSP, ASP는
+		back-end입니다
+	</p>
+</div>
+<div id="footer">
+	<p>address and @copyright</p>
+</div>
+```
