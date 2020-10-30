@@ -1,5 +1,6 @@
 .DS_Store
 note/
+!image/note/
 step01_html/
 step02_css/
 step03_javascript/
