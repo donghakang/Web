@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+      while (true) {
+        var id = prompt("ID를 입력하세요");
+        if (id == "admin") {
+          var pwd = prompt("Password를 입력하세요");
+          if (pwd == "1234") {
+            document.write("로그인 완료");
+            break;
+          } else {
+            alert("비밀번호를 확인하세요");
+          }
+        } else {
+          alert("아이디를 확인하세요");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script>
+      // Number(), parsetInt(): 문자 -> 정수
+      // parseFloat(): 문자 -> 실수
+      var itScore = prompt("IT 점수를 입력하세요", "IT 점수");
+      var engScore = prompt("영어점수를 입력하세요", "영어 점수");
+
+      alert(
+        "과목 평균은 " +
+          parseFloat((Number(itScore) + Number(engScore)) / 2) +
+          "점 입니다"
+      );
+
+      document.write(typeof itScore + "   " + typeof engScore);
+    </script>
+  </head>
+  <body></body>
+</html>

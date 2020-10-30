@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            body {
+                margin: 0px;
+                font-family: "Comic Sans Ms", "serif";
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            #main_lnb ul {
+                list-style-type: none;
+                justify-content: center;
+                display: flex;
+            }
+
+            #main_lnb li {
+                float: left;
+                background-color: #000;
+            }
+
+            #main_lnb li a {
+                display: flex;
+                padding: 40px;
+                text-decoration: none;
+                color: white;
+            }
+
+            #main_lnb li a:hover {
+                background-color: gray;
+            }
+
+            /* #main_lnb li {
+                background-color: black;
+                padding: 14px 16px;
+                float: left;
+            }
+
+            #main_lnb li a {
+                text-decoration: none;
+                color: white;
+            } */
+            /* .responsive {
+                float: left;
+            }
+            .gallery {
+                border: 1px solid #000;
+                width: 100px;
+            } */
+        </style>
+    </head>
+    <body>
+        <h1>Responsive Image Gallery</h1>
+
+        <div id="main_lnb">
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">갤러리</a></li>
+                <li><a href="#">뉴스</a></li>
+                <li><a href="#">찾아오시는길</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+        <br /><br />
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_fjords.jpg">
+                    <img
+                        src="img_fjords.jpg"
+                        alt="Trolltunga Norway"
+                        width="300"
+                        height="200"
+                    />
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_forest.jpg">
+                    <img
+                        src="img_forest.jpg"
+                        alt="Forest"
+                        width="600"
+                        height="400"
+                    />
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_lights.jpg">
+                    <img
+                        src="img_lights.jpg"
+                        alt="Northern Lights"
+                        width="600"
+                        height="400"
+                    />
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="img_mountains.jpg">
+                    <img
+                        src="img_mountains.jpg"
+                        alt="Mountains"
+                        width="600"
+                        height="400"
+                    />
+                </a>
+                <div class="desc">Add a description of the image here</div>
+            </div>
+        </div>
+
+        <div style="padding: 6px">
+            <p>
+                This example use media queries to re-arrange the images on
+                different screen sizes: for screens larger than 700px wide, it
+                will show four images side by side, for screens smaller than
+                700px, it will show two images side by side. For screens smaller
+                than 500px, the images will stack vertically (100%).
+            </p>
+            <p>
+                You will learn more about media queries and responsive web
+                design later in our CSS Tutorial.
+            </p>
+        </div>
+    </body>
+</html>

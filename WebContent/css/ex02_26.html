@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <style>
-      /* 메뉴만들기 */
-      body {
-        margin: 0px;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <title>Insert title here</title>
+        <style>
+            /* 메뉴만들기 */
+            body {
+                margin: 0px;
+            }
 
-      ul {
-        list-style-type: none;
-        margin: 0px;
-        padding: 0px;
-        overflow: hidden;
-        background-color: #000;
-        color: #ffffff;
-      }
+            ul {
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+                background-color: #000;
+                color: #ffffff;
+            }
 
-      li {
-        float: left;
-      }
-      li a,
-      .dropbtn {
-        display: inline-block;
-        color: #ffffff;
-        text-align: center;
-        padding: 14px 16px;
-        /* 밑줄 없애기 */
-        text-decoration: none;
-      }
+            li {
+                float: left;
+            }
+            li a,
+            .dropbtn {
+                display: inline-block;
+                color: #ffffff;
+                text-align: center;
+                padding: 14px 16px;
+                /* 밑줄 없애기 */
+                text-decoration: none;
+            }
 
-      li a:hover,
-      .dropdown:hover,
-      dropbtn {
-        background-color: green;
-      }
+            li a:hover,
+            .dropdown:hover,
+            dropbtn {
+                background-color: green;
+            }
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: lightgray;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: lightgray;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
 
-      .dropdown-content a {
-        color: gray;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-      }
+            .dropdown-content a {
+                color: gray;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      /* li.dropdown {
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            /* li.dropdown {
         display: inline-block;
       } */
 
-      /* li a.active,
+            /* li a.active,
       li a.active:hover {
         background-color: yellowgreen;
       } */
 
-      /* .dropdown-content a:hover {
+            /* .dropdown-content a:hover {
         background-color: #f1f1f1;
       } */
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#mail">메일</a></li>
-      <li><a href="#cafe">카페</a></li>
-      <li><a href="#blog">블로그</a></li>
-      <li class="dropdown">
-        <a href="#shopping" class="dropbtn">쇼핑</a>
-        <div class="dropdown-content">
-          <a href="#">가전제품</a>
-          <a href="#">의류/악세사리</a>
-          <a href="#">가방/신발</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#new" class="dropbtn">뉴스</a>
-        <div class="dropdown-content">
-          <a href="#">정치</a>
-          <a href="#">경제</a>
-          <a href="#">생활/문화</a>
-        </div>
-      </li>
-      <li style="float: right"><a class="active" href="#login">로그인</a></li>
-    </ul>
-  </body>
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#mail">메일</a></li>
+            <li><a href="#cafe">카페</a></li>
+            <li><a href="#blog">블로그</a></li>
+            <li class="dropdown">
+                <a href="#shopping" class="dropbtn">쇼핑</a>
+                <div class="dropdown-content">
+                    <a href="#">가전제품</a>
+                    <a href="#">의류/악세사리</a>
+                    <a href="#">가방/신발</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#new" class="dropbtn">뉴스</a>
+                <div class="dropdown-content">
+                    <a href="#">정치</a>
+                    <a href="#">경제</a>
+                    <a href="#">생활/문화</a>
+                </div>
+            </li>
+            <li style="float: right">
+                <a class="active" href="#login">로그인</a>
+            </li>
+        </ul>
+    </body>
 </html>
