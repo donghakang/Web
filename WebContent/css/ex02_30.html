@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      #visible,
+      #hidden,
+      #scroll,
+      #auto {
+        width: 400px;
+        height: 150px;
+        background-color: #faf4c0;
+        border: 1px solid black;
+        margin-bottom: 100px;
+      }
+      #visible {
+        /* 넘쳐 나도 보이게 해준다 */
+        overflow: visible;
+      }
+      #hidden {
+        /* 넘치면 보이지 않게한다. */
+        overflow: hidden;
+      }
+      #scroll {
+        /* 수동이지만, 스크롤이 무조건 양방향으로 나오게 한다 */
+        overflow: scroll;
+      }
+      #auto {
+        /* 자동으로 필요시 스크롤이 생긴다 */
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="visible">
+      <h2>1.overflow:visible</h2>
+      When Alice follows the White Rabbit down a rabbit hole, she finds herself
+      in a land where she can change her size. She meets a Duchess with a pig
+      for a baby, a Cook that throws spoons, a wise but mad Cheshire cat, the
+      March Hare, Mad Hatter and a Dormouse. A Caterpillar shows her how to
+      adjust her height by eating from the right and left sides of a mushroom.
+      With that knowledge,
+    </div>
+
+    <div id="hidden">
+      <h2>2.overflow:hidden</h2>
+      When Alice follows the White Rabbit down a rabbit hole, she finds herself
+      in a land where she can change her size. She meets a Duchess with a pig
+      for a baby, a Cook that throws spoons, a wise but mad Cheshire cat, the
+      March Hare, Mad Hatter and a Dormouse. A Caterpillar shows her how to
+      adjust her height by eating from the right and left sides of a mushroom.
+      With that knowledge,
+    </div>
+
+    <div id="scroll">
+      <h2>3.overflow:scroll</h2>
+      When Alice follows the White Rabbit down a rabbit hole,
+    </div>
+
+    <div id="auto">
+      <h2>4.overflow:auto</h2>
+      When Alice follows the White Rabbit down a rabbit hole, she finds herself
+      in a land where she can change her size. She meets a Duchess with a pig
+      for a baby, a Cook that throws spoons, a wise but mad Cheshire cat, the
+      March Hare, Mad Hatter and a Dormouse. A Caterpillar shows her how to
+      adjust her height by eating from the right and left sides of a mushroom.
+      With that knowledge,
+    </div>
+  </body>
+</html>
