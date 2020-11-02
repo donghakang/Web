@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>익명 함수</title>
+    <script>
+        shape = function () {
+            document.write("** 도형의 넓이 ** <br>");
+        }
+
+        circleSize = function (r) {
+            document.write("** 원의 넓이: " + (r * r * 3.14) + "<br>");
+        }
+
+        getSquareSize = function (a, b) {
+            return a * b;
+        }
+
+        getTriangleSize = function (a, b) {
+            return getSquareSize(a, b) / 2;
+        }
+
+        shape();
+        circleSize(10);
+        document.write("사각형의 넓이: " + getSquareSize(4, 5) + "<br>");
+        document.write("삼각형의 넓이: " + getTriangleSize(4, 5) + "<br>");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

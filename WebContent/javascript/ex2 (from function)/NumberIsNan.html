@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function plusfunc() {
+            var a = Number(frm.a.value);
+            var b = Number(frm.b.value);
+            if (isNaN(a) || isNaN(b)) {
+                alert("a 값 또는 b 값은 숫자가 아닙니다.");
+                frm.a.value = "";
+                frm.b.value = "";
+                frm.rs.value = "";
+                frm.a.focus();      // 마우스 커서를 다시 a 에 위치한다.
+
+            } else {
+                frm.rs.value = a + b;
+            }
+        }
+        function divifunc() {
+            var a = Number(frm.a.value);
+            var b = Number(frm.b.value);
+            if (isNaN(a) || isNaN(b)) {
+                alert("a 값 또는 b 값은 숫자가 아닙니다.");
+                frm.a.value = "";
+                frm.b.value = "";
+                frm.rs.value = "";
+                frm.a.focus();      // 마우스 커서를 다시 a 에 위치한다.
+                return;
+            } else {
+                var rs = a / b;
+                if (!isFinite(rs)) {
+                    alert("0으로 나눌수 없습니다.");
+                    frm.b.value = "";
+                    frm.rs.value = "";
+                    frm.b.focus();
+                    return;
+                } else {
+                    frm.rs.value = rs;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frm">
+        A값: <input type="text" name="a" size="7"> &nbsp;&nbsp;
+        B값: <input type="text" name="b" size="7"> &nbsp;&nbsp;
+        결과: <input type="text" name="rs" size="7"> &nbsp;&nbsp;
+        <input type="button" value="더하기" name="+" onclick="plusfunc()">
+        <input type="button" value="나누기" name="/" onclick="divifunc()">
+    </form>
+
+</body>
+
+</html>

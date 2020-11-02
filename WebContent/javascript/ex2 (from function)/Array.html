@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 배열객체 </title>
+    <script>
+        function output() {
+            var fruits = ["banana", "orange", "apple", "mango"];
+
+            var text = "";
+            for (var i = 0; i < fruits.length; i++) {
+                text += fruits[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;       // script를 굳이 위에다가 쓰고 싶은경우,
+        }
+    </script>
+</head>
+
+<body onload="output()">
+    <p id="demo"></p>
+</body>
+
+</html>
+<!-- --------------------------------------------------------------- -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>배열 객체</title>
+
+</head>
+
+<body>
+    <p id="demo">
+        <script>
+            var fruits = ["banana", "orange", "apple", "mango"];
+
+            var text = "";
+            for (var i = 0; i < fruits.length; i++) {
+                text += fruits[i] + "<br>";
+            }
+
+            /*
+            script가 body 에 있는 경우,
+            demo == id
+            */
+            document.getElementById("demo").innerHTML = text;
+            document.write(text);
+        </script>
+    </p>
+</body>
+
+</html> -->

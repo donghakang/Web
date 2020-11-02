@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function choice() {
+            var size = document.getElementsByTagName("li").length;
+            var text = "";
+            for (var i = 0; i < size; i++) {
+                text += document.getElementsByTagName("li")[i].innerHTML + "&nbsp;"
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="choice()">클릭하시오</button>
+    <ul>
+        <li>아메리카노</li>
+        <li>카레라테</li>
+        <li>콜드브루</li>
+    </ul>
+    <div id="demo"></div>
+</body>
+
+</html>

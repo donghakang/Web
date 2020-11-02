@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Window 객체</title>
+    <script>
+        // window는 생략 가능 하다.
+
+        // window.onload 를 익명함수로 설정한다.
+        window.onload = function () {
+            //open(<file name>, <target>, <window size>)
+            var win = window.open('win1.html', '', 'width=300, height=200');
+            win.moveTo(100, 100);       // 위치 설정 
+
+            window.setInterval(function () {
+                win.moveBy(20, 20);
+            }, 1000);                   // 1/1000 초에 한번씩 움직인다.
+
+            window.setTimeout(function () {
+                win.close();
+            }, 5000);                   // 5초 뒤에 끈다.
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

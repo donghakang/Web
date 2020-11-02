@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>location 내부 객체</title>
+    <script>
+        function process() {
+            var name = frm.name.value;
+            var phone = frm.phone.value;
+            // http://localhost:8080/lab/ex2/win2.html?name=kim&phone=010-1234-5678 
+            location.href = "win2.html?name=" + name + "&phone=" + phone;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" name="frm">
+        사용자명: <input type="text" name="name" id="">
+        전화번호: <input type="text" name="name" id="">
+        <input type="button" value="보내기" onclick="process()">
+    </form>
+</body>
+
+</html>
