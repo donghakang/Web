@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function getBirth() {
+            var date = document.getElementById("jumin").value;
+            var pattern = new RegExp("^([0-9]{2}([0][1-9]|[1][012])([0][1-9]|[12][0-9]|[3][01]))\-([1-4][0-9]{6})$");
+
+            if (pattern.test(date)) {
+                console.log("주민등록번호 확인");
+                var birth = date.substring(0, 6);
+                var text = birth.substring(0, 2) + "년 " + birth.substring(2, 4) + "월 " + birth.substring(4, 6) + "일";
+                document.getElementById("result").value = text;
+            } else {
+                alert("주민번호를 다시 입력하시오!!");
+            }
+        }
+
+        function process() {
+            // 년도 4자리 ,월이나 일은 1자리 이거나 2자리
+
+            var date = document.getElementById("hire_date").value;
+            var patt = new RegExp("^[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$")
+
+            if (patt.test(date)) {
+                alert("입사축하");
+
+            } else {
+                alert("다시 입력");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    [주민번호를 입력하시오]<br><br>
+    주민번호 : <input type="text" id="jumin">&nbsp;&nbsp;<input type="button" value="생년월일구하기" style="width: 130px;"
+        onclick="getBirth()"><br><br>
+    당신의 생일은 <input type="text" id="result"> 입니다.
+</body>
+
+</html>

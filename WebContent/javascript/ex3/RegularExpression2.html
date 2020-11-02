@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>정규 표현식</title>
+    <script>
+        function process() {
+            // 년도 4자리 ,월이나 일은 1자리 이거나 2자리
+
+            var date = document.getElementById("hire_date").value;
+            var patt = new RegExp("^[0-9]{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$")
+
+            if (patt.test(date)) {
+                alert("입사축하");
+            } else {
+                alert("다시 입력");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- 2015-01-24 -->
+    <span>입사연월일</span>
+    <input type="text" name="hire_date" id="hire_date">
+    <input type="button" value="commit" onclick="process()">
+</body>
+
+</html>

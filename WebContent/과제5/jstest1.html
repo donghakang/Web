@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<style>
+	table {
+		margin: 0 auto;
+		width: 250px;
+
+		position: relative;
+		border-collapse: collapse;
+		top: 100px;
+	}
+
+	td {
+		border: 1px solid gray;
+		padding: 10px;
+		text-align: center;
+	}
+
+	#header {
+		font-weight: bold;
+	}
+
+	input[type=button] {
+		width: 50px;
+	}
+</style>
+
+<script>
+	function operator(num) {
+		var a = document.getElementById("num1").value;
+		var b = document.getElementById("num2").value;
+
+		if (isNaN(a) || isNaN(b)) {
+			alert("숫자를 입력하세요")
+			document.getElementById("num1").value = 0;
+			document.getElementById("num1").focus();
+
+		} else {
+			a = Number(a);
+			b = Number(b);
+
+			if (num == 1) {
+				document.getElementById("result").value = a + b;
+			} else if (num == 2) {
+				document.getElementById("result").value = a - b;
+			} else if (num == 3) {
+				document.getElementById("result").value = a * b;
+			} else if (num == 4) {
+				if (b == 0) {
+					alert("0이 아닌 숫자를 입력하시오");
+					document.getElementById("num2").value = 1;
+					document.getElementById("num2").focus();
+				} else {
+					document.getElementById("result").value = a / b;
+				}
+			}
+		}
+
+
+	}
+
+</script>
+
+<body>
+	<table>
+		<tr>
+			<td id="header">A값</td>
+			<td><input type="text" id="num1" value="0"></td>
+		</tr>
+		<tr>
+			<td id="header">B값</td>
+			<td><input type="text" id="num2" value="0"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="+" onclick="operator(1)">
+				<input type="button" value="-" onclick="operator(2)">
+				<input type="button" value="×" onclick="operator(3)">
+				<input type="button" value="÷" onclick="operator(4)">
+			</td>
+		</tr>
+		<tr>
+			<td id="header">결과</td>
+			<td><input type="text" id="result" value="0"></td>
+		</tr>
+	</table>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function whenClick1() {
+			document.getElementById("heading").innerText = "TEST";
+		}
+		function whenClick2() {
+			document.getElementById("heading").style.color = "blue";
+		}
+		function exec() {
+			whenClick1();
+			whenClick2();
+		}
+	</script>
+</head>
+
+<body>
+	<input id="btn" type="button" value="이벤트" onclick="exec()">
+	<h3 id="heading">테스트</h3>
+</body>
+
+</html>

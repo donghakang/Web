@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function change() {
+			var sel = document.getElementById("dropbox");
+			var text = sel.options[sel.selectedIndex].text
+
+			document.body.style.backgroundColor = text;
+		}
+	</script>
+</head>
+
+<body onload="change()">
+	<select onchange="change()" id="dropbox">
+		<option value="1">red</option>
+		<option value="2" selected="selected">yellow</option>
+		<option value="3">green</option>
+	</select>
+</body>
+
+</html>

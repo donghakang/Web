@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<style>
+	#header {
+		width: 700px;
+		margin: 0 auto;
+
+		position: relative;
+		top: 100px;
+	}
+</style>
+
+<script>
+	function allcheck() {
+		var size = document.getElementsByName("language").length;
+		for (var i = 0; i < size; i++) {
+			var item = document.getElementsByName("language")[i];
+			if (item.checked == false) {
+				item.checked = true;
+			}
+		}
+	}
+	function allnocheck() {
+		var size = document.getElementsByName("language").length;
+		for (var i = 0; i < size; i++) {
+			var item = document.getElementsByName("language")[i];
+			if (item.checked == true) {
+				item.checked = false;
+			}
+		}
+	}
+	function chkclick() {
+		var size = document.getElementsByName("language").length;
+		var text = "";
+		for (var i = 0; i < size; i++) {
+			var item = document.getElementsByName("language")[i];
+			console.log(item.value);
+			if (item.checked == true) {
+				text += item.nextSibling.nodeValue + "\n";
+				// text += item.value + "\n";
+			}
+		}
+		alert(text);
+	}
+</script>
+
+<body>
+	<div id="header">
+		<label><input type="checkbox" name="language" value="Ajax">Ajax</label>&nbsp;
+		<label><input type="checkbox" name="language" value="java">java</label>&nbsp;
+		<label><input type="checkbox" name="language" value="javascript">javascript</label>&nbsp;
+		<label><input type="checkbox" name="language" value="oracle">oracle</label>&nbsp;
+
+		<input type="button" value="모두선택" style="width: 80px;" onclick="allcheck()">&nbsp;
+		<input type="button" value="모두해제" style="width: 80px;" onclick="allnocheck()">&nbsp;
+		<input type="button" value="클릭" style="width: 80px;" onclick="chkclick()">&nbsp;
+	</div>
+</body>
+
+</html>

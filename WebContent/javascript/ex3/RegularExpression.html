@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>정규 표현식</title>
+    <script>
+        // 입력되는 전체길이 5-8자
+        // 숫자와 영어로만 가능하다.
+        function process() {
+            var id = document.getElementById("mid").value;
+            // pattern
+            // -- 첫번째 단어는 a-z 혹은 A-Z
+            // -- 두번째 단어부터는 0-9 숫자도 가능
+            // -- 갯수는 5 - 8 글자 (뒤에 단어들이 4, 7) 개 있어야한다.
+            var patt = new RegExp("^[a-zA-Z][0-9a-zA-Z]{4, 7}$");
+
+            if (patt.test(id)) {
+                alert("성공");
+            } else {
+                alert("다시입력");
+                document.getElementById("mid").value = "";
+                document.getElementById("mid").focus();
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <label for="">아이디</label>
+    <input type="text" name="mid" id="mid">
+    <input type="button" value="commit" onclick="process()">
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function clear() {
+            var options = "";
+            for (var i = 1900; i < 2100; i++) {
+                options += "<option>" + i + "</option>";
+            }
+            document.getElementById("year").innerHTML = options;
+
+            var options = "";
+            for (var i = 1; i <= 12; i++) {
+                options += "<option>" + i + "</option>";
+            }
+            document.getElementById("month").innerHTML = options;
+        }
+
+        function look() {
+            var year = document.getElementById("year").value;
+            var month = document.getElementById("month").value;
+
+            alert(year + ", " + month);
+        }
+    </script>
+</head>
+
+<body onload="clear()">
+    <select id="year">
+    </select>년&nbsp;
+    <select id="month"></select>월&nbsp;
+    <input type="button" value="보기" onclick="look()">
+</body>
+
+</html>

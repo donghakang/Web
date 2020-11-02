@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script>
+    function calc(num) {
+        var sel = document.getElementsByName("chk");
+        var size = sel.length;
+        var num = 0;
+        for (var i = 0; i < size; i++) {
+            if (sel[i].checked) {
+                num += Number(sel[i].value);
+            }
+        }
+        document.getElementById("result").value = num;
+    }
+</script>
+
+<body>
+    <div>
+        <label><input type="checkbox" name="chk" value="1000" onclick="calc(this);">1000</label>&nbsp;&nbsp;
+        <label><input type="checkbox" name="chk" value="2000" onclick="calc(this);">2000</label>&nbsp;&nbsp;
+        <label><input type="checkbox" name="chk" value="3000" onclick="calc(this);">3000</label>&nbsp;&nbsp;
+        <input type="text" id="result">
+    </div>
+</body>
+
+</html>
