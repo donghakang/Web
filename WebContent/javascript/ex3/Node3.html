@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>근거리 선택자</title>
+</head>
+
+<body>
+    <ul id="tea">
+        <li>아메리카노</li>
+        <li>카페라테</li>
+        <li>콜드브루</li>
+    </ul>
+    <hr>
+    <script>
+        var tea = document.getElementById("tea");
+        var childs = tea.childNodes;
+        alert(childs.length);
+        for (var i = 0; i < childs.length; i++) {
+            alert(childs[i].nodeName);
+            if (childs[i].nodeName == "li")
+                document.write(i + "번째 데이터 = " + childs[i].firstChild.nodeValue + "<br>");
+        }
+    </script>
+</body>
+
+</html>

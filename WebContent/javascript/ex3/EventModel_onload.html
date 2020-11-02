@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>고전 이벤트 모델</title>
+    <script>
+        window.onload = function () {
+            var btn1 = document.getElementById("btn1");
+
+            btn1.onclick = function () {
+                alert("클릭1");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="클릭1" id="btn1">
+    <input type="button" value="클릭2" id="btn2" onclick="alert('클릭2')">
+</body>
+
+</html>

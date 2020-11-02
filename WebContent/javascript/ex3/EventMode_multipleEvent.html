@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>표준 이벤트 모델</title>
+    <script>
+        function ex1() {
+            alert("1");
+        }
+        function ex2() {
+            alert("2");
+        }
+        function ex3() {
+            alert("3");
+        }
+        // 한번에 여러개의 이벤트를 생성할 수 있다.
+        function addEvent() {
+            document.getElementById("startbtn").addEventListener("click", ex1());
+            document.getElementById("startbtn").addEventListener("click", ex2());
+            document.getElementById("startbtn").addEventListener("click", ex3());
+        }
+    </script>
+</head>
+
+<body>
+    <button id="startbtn" onclick="addEvent()">시작</button>
+</body>
+
+</html>
