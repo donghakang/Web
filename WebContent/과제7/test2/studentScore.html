@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Ajax를 이용한 프로그램</title>
-<script src="score.js"></script>
+    <meta charset="UTF-8">
+    <title>Ajax를 이용한 프로그램</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <!-- <script src="score.js"></script> -->
+    <script>
+
+
+        function total(kor, eng, mat) {
+            return kor + eng + mat;
+        }
+
+        function avg(total) {
+            return total / 3.0;
+        }
+
+        $(document).ready(function () {
+            $('#process').on('click', function () {
+                var student = {
+                    "name": $('#name').val(),
+                    "kor": Number($('#kor').val()),
+                    "eng": Number($('#eng').val()),
+                    "mat": Number($('#mat').val())
+                };
+                var totalScore = total(student.kor, student.eng, student.mat)
+                var avgScore = avg(totalScore);
+                console.log(totalScore)
+                $('#result').html(student.name + "의 총점은 " + total(student.kor, student.eng, student.mat) + "이고, "
+                    + "평균은 " + avgScore.toFixed(2) + "입니다");
+            })
+        })
+    </script>
 </head>
 
 <body>
-<h1>* 성적 처리 프로그램 *</h1>
-이름 : <input type="text" id="name"><br>
-국어 : <input type="text" id="kor"><br>
-영어 : <input type="text" id="eng"><br>
-수학 : <input type="text" id="mat"><br>
-<input type="button" id="process" value="성적처리"><br><br>
+    <h1>* 성적 처리 프로그램 *</h1>
+    이름 : <input type="text" id="name"><br>
+    국어 : <input type="text" id="kor"><br>
+    영어 : <input type="text" id="eng"><br>
+    수학 : <input type="text" id="mat"><br>
+    <input type="button" id="process" value="성적처리"><br><br>
 
-<div id="resut">홍길동의 총점은 240점이고 평균은 80.00입니다</div>
+    <div id="result">홍길동의 총점은 240점이고 평균은 80.00입니다</div>
 </body>
+
 </html>
 
 <!-- score.js에서 처리해서 결과를 studentScore.html로 반영하시오 -->

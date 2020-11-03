@@ -6,15 +6,40 @@
     <title>jQuery Javascript</title>
     <script src="../lib/jquery-3.5.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            function updateAll() {
-                // 합계 계산
+        function updateAll() {
+            // 합계 계산
+            var bookTotal = 0;
+            var moneyTotal = 0;
+            for (var i = 1; i <= 3; i++) {
+                // console.log($('#book' + i).val());
+                bookTotal += Number($('#book' + i).val());
             }
+            $('#totalNumber').val(bookTotal);
 
-            $('#reset').on('click', function () {
+            var priceTotal = Number($('#book1Total').val()) + Number($('#book2Total').val()) + Number($('#book3Total').val());
+            $('#totalPrice').val(priceTotal);
+        }
 
+        $(document).ready(function () {
+            // 숫자를 바꿀때 마다 합계를 계산
+            $('#book1').keyup(function () {
+                $('#book1Total').val($(this).val() * 25000);
+            })
+            $('#book2').keyup(function () {
+                $('#book2Total').val($(this).val() * 27000);
+            })
+            $('#book3').keyup(function () {
+                $('#book3Total').val($(this).val() * 25000);
             })
 
+            // 초기화
+            $('#reset').on('click', function () {
+                $('input').each(function () {
+                    $(this).val("0");
+                })
+                $('#calculate').val("합계계산");
+                $('#reset').val("초기화");
+            })
         })
     </script>
 </head>
@@ -32,7 +57,7 @@
             </tr>
             <tr>
                 <td> Ajax 3일만 하면 된다 </td>
-                <td> 25,000원 </td>
+                <td> 25,000원</td>
                 <td> <input id="book1" type="text" size="2" value="0" onclick="this.select();" /> </td>
                 <td> <input id="book1Total" type="text" size="6" value="0" /> 원</td>
             </tr>
@@ -55,7 +80,7 @@
                 <td> <input id="totalPrice" type="text" size="6" value="0" /> 원</td>
             </tr>
         </table> <br />
-        <input type="button" value="합계계산" onclick="updateAll();" />
+        <input id="calculate" type="button" value="합계계산" onclick="updateAll();" />
         <input id="reset" type="reset" value="초기화" />
     </form>
 </body>
