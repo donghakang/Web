@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>innerText/innerHTML</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $().ready(function () {
+            $('#btn1').on('click', function () {
+                var str = $('#txt').val();
+                $('#view1').text(str);
+            })
+
+            $('#btn2').on('click', function () {
+                var str = $('#txt').val();
+                $('#view2').html(str);
+            })
+        });
+
+    </script>
+    <style>
+        #view2 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt" size="60" name="text">
+    <input type="button" value="출력1" id="btn1">
+    <input type="button" value="출력2" id="btn2">
+    <br>
+    <br>
+    <br>
+    <div id="view1"></div>
+    <div id="view2"></div>
+</body>
+
+</html>

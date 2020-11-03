@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 화면</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 350px;
+
+            border: 1px solid #000;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        .login {
+            position: absolute;
+            top: 24px;
+            left: 180px;
+            height: 40px;
+            width: 80px;
+            background-color: #47c83e;
+            border: 1px solid #47c83e;
+            font-size: 10px;
+            color: white;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-left: 10px;
+        }
+
+        input {
+            border: 0.5px solid #d5d5d5;
+        }
+    </style>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $().ready(function () {
+            var emp = { "id": "abcd", "pw": "1234", "name": "홍길동", "point": "1250" };
+
+            $('#id, #pw').focus(function () {
+                $(this).css('background-color', 'yellow');
+            });
+
+            $('#id, #pw').blur(function () {
+                $(this).css('background-color', 'white');
+            })
+
+            $('#login').on('click', function () {
+                if ($('#id').val().length == 0 || $('#pw').val().length == 0) {
+                    $('#confirm')
+                        .text("아이디와 비밀번호를 입력해주세요")
+                        .css('color', 'black');
+                    $('#id').focus();
+                } else if ($('#id').val() != emp['id']) {
+                    $('#id').focus();
+                    $("#id, #pw").val("");
+                    $('#confirm')
+                        .text("아이디를 확인하세요")
+                        .css('color', 'red');
+                } else if ($('#pw').val() != emp['pw']) {
+                    $('#pw').focus();
+                    $("#id, #pw").val("");
+                    $('#confirm')
+                        .text("비밀번호를 확인하세요")
+                        .css('color', 'red');
+                } else {
+                    $('#confirm')
+                        .html(emp['name'] + "님 환영합니다.<br>현재 포인트는 " + emp['point'] + "점 입니다.")
+                        .css('color', 'blue');
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <dv id="result" class="container">
+        <label for="input">[로그인 화면]</label>
+        <br>
+        <br>
+        <input type="text" name="id" id="id" placeholder="아이디">
+        <span>아이디를 입력하시오</span>
+        <br>
+        <input type="text" name="pw" id="pw" placeholder="패스워드">
+        <span>패스워드를 입력하시오</span>
+        <br>
+        <button id="login">Login</button>
+        <br>
+        <br>
+        <span id="confirm"></span>
+    </dv>
+</body>
+
+</html>
