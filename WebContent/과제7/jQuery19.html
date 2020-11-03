@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.ex1{
+		color:green;
+	}
+	.ex2{
+		color:red;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function (){
+		$('p').css("color","green");
+	});
+	$("#btn2").click(function (){
+		$('p').css("color","red");
+	});
+	
+	//--------------------------------------
+	
+// 	$("#btn1").click(function (){
+// 		$('p').addClass("ex1");
+// 		$('p').removeClass("ex2");
+// 	});
+// 	$("#btn2").click(function (){
+// 		$('p').addClass("ex2");
+// 		$('p').removeClass("ex1");
+// 	});
+});
+</script>
+</head>
+<body>
+<p>Hello World</p>
+<button id="btn1">초록색</button>
+<button id="btn2">빨간색</button>
+</body>
+</html>
+
+
+
