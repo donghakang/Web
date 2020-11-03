@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<style>
+body { font-size: 100%; }
+.desc { font-size: 0.8em; color: orange; font-weight: bold;  }
+.desc2 { font-size: 0.6em; color: orange; float: left; margin-left: 3em; margin-top: 0.25em;  }
+ul { display: inline; list-style: square; color:gray; margin-left: 3em; }
+li { float: left; margin-left: 1.5em; margin-top: 0.25em; }
+hr { margin: 1em 0.5em; border-top: 1px dotted gray; }
+#resultbox { margin-right: 1em; }
+</style>
+<script>
+
+
+</script>
+
+<body>
+<div id="accordion">
+	<h1>자신의 비만도를 체크해 보세요!</h1>
+	<div class="ui-widget" style="text-align: center;">
+		<span class="desc">&lt; 신체질량지수(Body Mass Index:BMI, 카우프지수)에 의한 비만도 계산법 &gt;</span><br><br>
+		<div class="ui-widget" style="background-color: #FFEFDB; padding: 10px; text-align: left; position: relative;">
+			<span id="radio" style="margin-top: 1em; margin-left: 3em;">
+				<span>성별 : </span>
+				<input type="radio" id="radio1" name="radio" checked="checked" value="M"><label for="radio1">남</label>
+				<input type="radio" id="radio2" name="radio" value="F"><label for="radio2">여</label>
+			</span>
+			<span id="numberbox" style="margin-top: 1em; margin-left: 3em;">
+				<span>신장 : </span>
+				<input class="spinner" value="150" type="text" class="text ui-widget-content ui-corner-all" id="heightbox"> cm
+				<span>체중 : </span>
+				<input class="spinner" value="50" type="text" class="text ui-widget-content ui-corner-all" id="weightbox"> kg
+			</span>
+			<span id="btnbox" style="margin-top: 1em; margin-left: 2em;">
+				<button title="결과를 보여줍니다.">결과보기</button>
+			</span><br>
+			<span id="descbox" style="margin-top: 1em; margin-left: 3em;"><label class="desc2">[판정기준]</label>
+				<ul>
+					<li>저체중 : 20미만</li>
+					<li>정상 : 20~24</li>
+					<li>과체중 : 25~29</li>
+					<li>비만 : 30~39</li>
+					<li>심각한 비만 : 40이상</li>
+				</ul>
+				<hr>
+				<span id="resultbox" style="float: right;">
+				</span>
+			</span>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

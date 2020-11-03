@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="euc-kr">
+<title>jQuery 또는 JavaScript를 이용해서 완성</title>
+<script>
+
+</script>
+</head>
+<body>
+<h2> 서적 주문 양식 </h2>
+<form action="">
+    <p> 주문서 </p>
+    <table border="1">
+        <tr> <th> 책 제목 </td> <th> 가격 </th> <th> 수량 </th> <th> 합계 </th> </tr>
+        <tr>
+            <td> Ajax 3일만 하면 된다 </td> <td> 25,000원 </td>
+            <td> <input id="book1" type="text" size="2" value="0" onclick="this.select();" /> </td>
+            <td> <input id="book1Total" type="text" size="6" value="0"/> 원</td>
+        </tr>
+        <tr>
+            <td> jQuery 멀티미디어 </td> <td> 27,000원 </td>
+            <td> <input id="book2" type="text" size="2" value="0" onclick="this.select();" /> </td>
+            <td> <input id="book2Total" type="text" size="6" value="0"/> 원</td>
+        </tr>
+        <tr>
+            <td> 자바입문: 이론과 실습 </td> <td> 25,000원 </td>
+            <td> <input id="book3" type="text" size= "2" value="0" onclick="this.select();" /> </td>
+            <td> <input id="book3Total" type="text" size="6" value="0"/> 원</td>
+        </tr>
+        <tr>
+            <td> 합계 </td> <td> &nbsp; </td>
+            <td> <input id="totalNumber" type="text" size= "2" value="0"/> </td>
+            <td> <input id="totalPrice" type="text" size="6" value="0"/> 원</td>
+        </tr>
+    </table> <br />
+    <input type="button" value="합계계산" onclick="updateAll();" />
+    <input type="reset" value="초기화"/>
+</form>
+</body>
+</html>
+<!-- 합계와 초기화를 완성하시오 -->
