@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $().ready(function () {
+            var emp = [{ "name": "kim", "age": "15" },
+            { "name": "kang", "age": "26" },
+            { "name": "park", "age": "35" }];
+
+            var msg = "";
+            msg += "이름: " + emp[0].name + "<br>나이: " + emp[0].age + "<br><br>";
+            msg += "이름: " + emp[1].name + "<br>나이: " + emp[1].age + "<br><br>";
+            msg += "이름: " + emp[2].name + "<br>나이: " + emp[2].age + "<br><br>";
+
+            $('#result').html(msg);
+        })
+
+    </script>
+</head>
+
+<body>
+    <h2>JSON 표기법</h2>
+    <div id="result"></div>
+</body>
+
+</html>

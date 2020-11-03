@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input').focus(function () {
+                $(this).css('background-color', 'orange');
+            });
+
+            $('input').blur(function () {
+                $(this).css('background-color', 'white');
+            })
+        });
+    </script>
+</head>
+
+<body>
+    이름: <input type="text" name="name" id="name" placeholder="이름을 입력하시오">
+</body>
+
+</html>

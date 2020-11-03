@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Callback</title>
+    <script>
+        // 운영체제가 호출하는 함수
+        function greeting(name) {
+            alert("감사합니다." + name + "님");
+        }
+        function userInput(callback) {
+            var name = prompt("이름을 입력하시오", "");
+            callback(name);
+        }
+        userInput(greeting);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

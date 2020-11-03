@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Button Interaction</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $().ready(function () {
+            $('#btn1').on('click', function () {
+                $('img').show();
+            });
+
+            $('#btn2').on('click', function () {
+                $('img').hide();
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn1">보이기</button>
+    <button id="btn2">숨기기</button>
+    <div><img src="../image/dog.png" alt="img" id="img"></div>
+</body>
+
+</html>
