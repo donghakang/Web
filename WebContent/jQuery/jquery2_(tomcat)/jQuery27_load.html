@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // $(function() {
+
+        // })
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                $('#demo').load("sample1.txt");
+            })
+            $('#btn2').click(function () {
+                $('#demo').load("sample2.txt");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h2>jQuery를 이용한 텍스트 불러오기</h2>
+    <p id="demo"></p>
+    <button type="button" id="btn1">택스트</button>
+    <button type="button" id="btn2">테이블</button>
+</body>
+
+</html>

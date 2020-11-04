@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span {
+            font-size: 15px;
+            font-weight: bold;
+            color: orange;
+        }
+
+        #log1,
+        #log2 {
+            padding: 20px;
+            width: 350px;
+        }
+
+        table {
+            width: 400px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $("#loginb").on('click', function () {
+                var id = $('#id').val();
+                var pw = $('#pw').val();
+                var result = "";
+
+                if (id == "" || pw == "") {
+                    $('#result')
+                        .text("아이디와 패스워드를 입력해주세요")
+                        .css({ 'color': 'black', 'font-weight': 'normal' })
+                } else {
+                    // get JSON
+                    $.getJSON('idpw.txt', function (data) {
+                        $.each(data, function (i, entry) {
+                            if (entry.id == id && entry.pw == pw) {
+                                result = entry.name + "님이 로그인 하셨습니다. <br>"
+                                result += "현재 보유하신 포인터는 " + entry.point + "입니다."
+                                $('#result')
+                                    .html(result)
+                                    .css({ 'color': 'blue', 'font-weight': 'bold' });
+                                return false;
+                            } else {
+                                result = "id 또는 pw가 틀립니다."
+                                $('#result')
+                                    .html(result)
+                                    .css({ 'color': 'red', 'font-weight': 'bold' });
+                                $('#loginf').each(function () {
+                                    this.reset();
+                                    $('#id').focus();
+                                })
+                            }
+                        })
+
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="log1">
+        <span>계졍과 패스워드를 입력해 주세요</span>
+        <form action="" id="loginf">
+            <table>
+                <tr>
+                    <td>계정</td>
+                    <td width="150px">
+                        <input type="text" id="id" name="id"></td>
+                    <td>
+                        <input type="button" value="로그인" id="loginb" name="loginb">
+                        <input type="button" value="회원가입" id="regb" name="regb">
+                    </td>
+                </tr>
+                <tr>
+                    <td>패스워드</td>
+                    <td><input type="password" name="pw" id="pw"></td>
+                    <td>&nbsp'</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div id="result"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

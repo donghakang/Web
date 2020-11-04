@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                $.getJSON('./json1.txt', function (data) {
+                    alert(data);
+                    alert(JSON.stringify(data));
+                    alert(data.id + "    " + data.pw);
+                });
+            });
+        });
+    </script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">JSON 데이터 불러오기</button>
+</body>
+
+</html>

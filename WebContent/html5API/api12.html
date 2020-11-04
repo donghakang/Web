@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹 워커</title>
+<script>
+var worker=null;
+function init(){
+	var btnStart=document.getElementById("btnStart");
+	var btnStop=document.getElementById("btnStop");
+	var demo=document.getElementById("demo");
+	                                                         
+	btnStart.addEventListener("click", startWorker);
+	btnStop.addEventListener("click", stopWorker);
+}
+function startWorker(){
+	if(!window.Worker) {
+		console.log("웹 워커를 지원하지 않는 브라우저입니다.");
+	}
+	if (worker){
+	  stopWorker();
+	}
+	
+	worker=new Worker("worker.js");
+	worker.postMessage(""); 
+	
+	worker.onmessage=function(event) {
+	  console.log("호출 메시지:", event.data );
+	  demo.innerHTML += event.data+"<br>";
+	};
+}
+function stopWorker(){
+  if(worker){
+    worker.terminate();
+    worker=null;
+  }
+}
+window.addEventListener("load", init, false);
+</script>
+</head>
+<body>
+	<h2>Web Worker Test</h2>
+	<button id="btnStart" class="btn">Start</button>
+	<button id="btnStop"  class="btn">Stop</button>
+	<div id="demo"></div> 
+</body>
+</html>
+<!-- 
+웹 워커는 백그라운드에서 스레드(Thread)가 동작하게 해주는 JavaScript이다. 
+스레드란 응용 프로그램(프로세스)내에서 실행하는 흐름의 단위를 말한다. 
+지금까지의 웹페이지는 단일 스레드를 사용했으나 웹 워커는 JavaScript의 
+다중 스레드(Multi-Thread)를 지원한다.
+
+웹 워커의 활용 범위는 다음과 같다.
+1. 사용자 인터페이스를 방해하지 않고 지속적인 처리 작업을 해야 할 경우에 사용한다.
+2. 복잡한 수학 계산이 많이 들어간 작업을 처리할 때 사용한다.
+3. 로컬이나 원격지에 있는 리소스에 대한 액세스 작업을 할 경우에 사용한다.
+4. 백그라운드에서 오랜 시간 작업해야 하는 경우에 사용한다
+
+[형식]
+var 객체명 = new Worker("파일명");
+
+[사용객체]
+1. onmessage: 워커로부터의 메시지를 전달받을 때 발생하는 이벤트이다.
+2. onerror: 워커가 예외를 발생시켰으나 내부적으로 처리되지는 않았을 경우 발생하는 이벤트이다.
+3. postMessage(): 데이터를 전송한다.
+4. terminate(): 워커 스레드를 강제로 종료한다.
+
+[실습환경]
+ctrl+f11(실행) -> 웹브라우저 띄우고 F12  -> Console(탭)을 띄우고 "Start"버튼을 눌러 테스트 할것
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

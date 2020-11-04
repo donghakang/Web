@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            var audio = $('#ado')[0];
+            $('#play').on('click', function () {
+                audio.play();
+            })
+            $('#pause').on('click', function () {
+                audio.pause();
+            })
+            $('#mute').on('click', function () {
+                audio.volume = 0;
+            })
+            $('#unmute').on('click', function () {
+                audio.volume = 1;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <audio id=" ado">
+        <source src="audio/welcome.mp3" type="audio/mp3">
+        <source src="audio/welcome.ogg" type="audio/ogg">
+    </audio><br> -->
+    <audio id="ado" controls="controls">
+        <source src="audio/welcome.mp3" type="audio/mp3">
+        <source src="audio/welcome.ogg" type="audio/ogg">
+    </audio><br>
+    <button onclick="play()">재생</button>
+    <button onclick="pause()">일시정지</button>
+    <button onclick="mute()">음소거</button>
+    <button onclick="unmute()">음소거 해제</button>
+</body>
+
+</html>

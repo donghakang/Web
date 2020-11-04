@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var v = $('#vdo')[0];
+            $('#btnPlay').on('click', function () {
+                v.play();
+            })
+            $('#btnPause').on('click', function () {
+                v.pause();
+            })
+            $('#btnStop').on('click', function () {
+                v.pause();
+                v.currentTime = 0;
+            })
+            $('#btnPrev').on('click', function () {
+                v.currentTime -= 5;
+            })
+            $('#btnNext').on('click', function () {
+                v.currentTime += 5;
+            })
+            $('#btnRate1').on('click', function () {
+                v.playbackRate = 1;
+            })
+            $('#btnRate2').on('click', function () {
+                v.playbackRate = 2;
+            })
+            $('#btnSizeNormal').on('click', function () {
+                v.width = 300;
+            })
+            $('#btnSizeLarge').on('click', function () {
+                v.width = 500;
+            })
+            $('#btnSizeSmall').on('click', function () {
+                v.width = 150;
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Gilgamesh Story</h3>
+    <video width="300" id="vdo" controls="control">
+        <source src="video/gilgamesh.mp4" type="video/mp4">
+        </source>
+    </video>
+    <br>
+    <button id="btnPlay">시작</button>
+    <button id="btnPause">일시정지</button>
+    <button id="btnStop">정지</button>
+    <button id="btnRate1">1배속</button>
+    <button id="btnRate2">2배속</button><br>
+    <button id="btnPrev"> << </button>
+    <button id="btnNext"> >> </button>
+    <button id="btnSizeNormal">일반 화면</button>
+    <button id="btnSizeLarge">큰 화면</button>
+    <button id="btnSizeSmall">작은 화면</button>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // function go() {
+        //     var sel = document.getElementById("sel");
+        //     console.log(sel);
+        //     var val = sel.options[sel.selectedIndex].value;
+        //     document.getElementById("output").innerHTML = "<span style='color:orange';>" + val + "을 선택했습니다. </span>"
+        // }
+
+        $(document).ready(function () {
+            $('#sel').change(function () {
+                // var ob = $(this).val();
+                var ob = $('select > option:selected').val();
+                $('#output').text(ob + "를 선택했습니다.").css('color', 'red');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <select id="sel" onchange="go()">
+        <option>apple</option>
+        <option>orange</option>
+        <option>strawberry</option>
+        <option>melon</option>
+        <option>kiwi</option>
+    </select>
+    <br><br>
+    <div id="output"></div>
+</body>
+
+</html>

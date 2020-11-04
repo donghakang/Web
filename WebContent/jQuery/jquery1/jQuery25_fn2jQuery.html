@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>From Javascript to JQuery</title>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // function go() {
+        //     var cnt = 0;
+        //     var len = document.form1.elements.length;   // 6개
+
+        //     for (var i = 0; i < len; i++) {
+        //         var ob = document.form1.elements[i];
+        //         if (ob.name == "chk") {
+        //             if (ob.checked) {
+        //                 cnt += 1;
+        //             }
+        //         }
+        //     }
+        //     document.getElementById("result").innerHTML = "<span style='color:orange;'>" + cnt + "개 선택되었습니다.</span>"
+        // }
+
+        $(document).ready(function () {
+            $('#go').click(function () {
+                $('#result')
+                    .text($('.cb:checked').length + "개 선택되었습니다.")
+                    .css('color', 'orange');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="" name="form1">
+        <input type="checkbox" name="chk" id="" class="cb">농구
+        <input type="checkbox" name="chk" id="" class="cb">낚시
+        <input type="checkbox" name="chk" id="" class="cb">여행
+        <input type="checkbox" name="chk" id="" class="cb">바둑
+        <input type="checkbox" name="chk" id="" class="cb">게임
+        <input type="button" value="선택된 취미의 갯수" id="go" onclick="go()">
+    </form>
+
+    <br><br>
+    <div id="result"></div>
+</body>
+
+</html>
