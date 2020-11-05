@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();  // drop이 가능하도록 요소의 기본적인 속성을 차단함  
+}                          
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}                           // drag이벤트가 발생하는 요소의 id의 "text"를(drag1, drag2....)으로 저장함
+function drop(ev) {
+    var data = ev.dataTransfer.getData("text");           // 저장한 "text"요소를 가져옴
+    ev.target.appendChild(document.getElementById(data)); // 가져온 "text"를 target에 추가
+}
+</script>
+
+</head>
+<body>
+<p>박스안으로 드래그 하시오</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+<img id="drag1" src="image/img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

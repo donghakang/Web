@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Ajax</title>
+    <script>
+        function getXMLHttpRequest() {
+            /*
+            @ 서버와 통신할 객체를 생성한다.
+            */
+            if (window.ActiveXObject) {
+                try {
+                    return new ActiveXObject("Msxml2.XMLHTTP");
+                    // 웹 프라우저가 IE5.0, IE6.0인 경우 ActiveX 객체를 사용해서 통신 객체 생성
+                } catch (e1) {
+                    return null;
+                }
+            } else if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+                // 웹 브라우저가 IE7.0, 파이어 폭스, 사파리 오페라 인경우 자바스크립트의 내장 객체를 사용해서 객체 생성
+            } else {
+                return null;
+            }
+
+        }
+
+        function viewMessage() {
+            if (httpRequest.readyState == 4) {
+                // 전송완료,
+                if (httpRequest.status==200) {
+                    // 요청 성공
+                    alert("응답: " + httpRequest.status);
+                } else {
+                    // 요청 실패
+                    alert("실패: " + httpRequest.status);
+                }
+            }
+        }
+
+        function load(url) {
+            httpRequest = getXMLHttpRequest();
+            httpRequest.onreadystatechange = viewMessage;
+            httpRequest.open("GET", url, true);
+            httpRequest.send(null);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="simple.html" onclick="load(value)">
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio</title>
+    <style>
+        
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        function init() {
+            var c = document.getElementById("myCan1");
+            var ctx = c.getContext('2d');
+            ctx.arc(95, 50 , 40, 0, Math.PI*2);
+
+            ctx.fillStyle = 'green';
+            ctx.fill();
+
+            var c = document.getElementById('myCan2');
+            var ctx= c.getContext('2d');
+            ctx.moveTo(0,0);
+            ctx.lineTo(100, 100);
+            ctx.stroke();
+
+            var c = document.getElementById('myCan3');
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 150, 75);
+            ctx.stroke();
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id="myCan1" width="200" height="100"></canvas>
+    <canvas id="myCan2" width="200" height="100"></canvas>
+    <canvas id="myCan3" width="200" height="100" style="border: 1px solid #000;"></canvas>
+</body>
+
+</html>
