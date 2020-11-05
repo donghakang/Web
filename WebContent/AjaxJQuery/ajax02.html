@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    $('#submit').click();
+                    event.preventDefault? event.preventDefault():event.returnValue=false;
+                }
+            });
+
+            $('#submit').on('click', function() {
+                var name = "username=" + $('.user').val();
+
+                $.ajax({
+                    type:"POST",
+                    url:"ajaxResult2.jsp",
+                    dataType:"html",                    // 응답받을 파일
+                    data:name,
+                    error:function() {
+                        alert("통신 실패");
+                    },
+                    success:function(data) {
+                        $('#message').html(data);        //html 태그, or text 문자
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <label>이름을 입력하시오</label>
+        <input type="text" name="username" class="user">
+        <input type="button" id="submit" value="입력">
+    </form><br><br>
+    <div id="message"></div>
 </body>
+
 </html>
+<!-- 
+preventDefault(): 기본적으로 정의된 이벤트를 작동하지 못하게 하는것
+<a><input><textarea>의 기본 동작을 막을수 있다.
+
+a 태그는 href 링크값으로 페이지를 이동시켜주는 기본적인 기능이있다.
+이때, preventDefault()함수를 실행시켜주면 페이지 이동을 막아준다. -->
