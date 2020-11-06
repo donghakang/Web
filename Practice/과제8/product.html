@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery_Ajax_JSON을 이용한 프로그램</title>
+    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').on('click', function () {
+                var xhr = new XMLHttpRequest();
+
+                xhr.onreadystatechange = function (event) {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        if (xhr.status == 200) {
+                            
+                            var str = xhr.responseText;
+                            var result = JSON.parse(str);
+                            output = "<table border='1'><tr><th>번호</th><th>상품명</th><th>가격</th><th>날짜</th></tr>";
+                            for (var i in result) {
+                                output += "<tr><th>" + i + "</th><th>" + result[i].item + "</th><th>" + result[i].price + "</th><th>" + result[i].regdate + "</th></tr>"
+                            }
+
+                            output += "</table>"
+                            document.getElementById('display').innerHTML += output;
+                        }
+                    }
+                }
+
+                xhr.open('GET', 'product.txt', true);
+                xhr.send();
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <h1>상품 전체보기</h1>
+    <button id="btn">데이타 불러오기</button>
+
+    <div id="display"></div>
+</body>
+
+</html>
+<!-- 상품전체를 테이블에 출력하시오 -->

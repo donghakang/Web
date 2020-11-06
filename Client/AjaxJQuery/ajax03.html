@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Insert title here</title>
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            // $(document).ready(function () {
+            //     $("#submit").click(function () {
+            //         var sendData = "username=" + encodeURI($(".user").val());
+
+            //         $.get("ajaxResult3.jsp?" + sendData, function (data) {
+            //             $("#message").html(data);
+            //         });
+            //     });
+            // });
+            $(document).ready(function () {
+                $("#submit").click(function () {
+                    var sendData = "username=" + encodeURI($(".user").val());
+                    $.post("ajaxResult3.jsp", sendData, function (a) {
+                        $("#message").html(a);
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <label>이름을 입력하시오</label>
+            <input type="text" name="username" class="user" />
+            <input type="button" value="입력" id="submit" />
+        </form>
+        <br /><br />
+
+        <div id="message"></div>
+    </body>
+</html>

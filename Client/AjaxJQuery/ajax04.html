@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.getScript("ajaxResult4.js");
+
+                $("#submit").click(function () {
+                    var sendData = setName($(".user").val());
+                    $("#message").html(sendData);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>이름을 입력하시오</label>
+            <input type="text" name="username" id="" class="user" />
+            <input type="button" value="입력" id="submit" />
+        </form>
+        <br /><br />
+        <div id="message"></div>
+    </body>
+</html>
