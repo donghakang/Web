@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="MyBatisProject/src"/>
+	<classpathentry kind="src" path="step01_Servlet/src"/>
+	<classpathentry excluding="com.ezen.exam/" kind="src" path="step01_ServletProject/src"/>
+	<classpathentry kind="src" path="step01_ServletProject/src/com.ezen.exam"/>
+	<classpathentry kind="src" path="step02_ServletProject/src"/>
+	<classpathentry kind="lib" path="MyBatisProject/web/WEB-INF/lib/mybatis-3.1.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="MyBatisProject/build/classes"/>
+</classpath>
