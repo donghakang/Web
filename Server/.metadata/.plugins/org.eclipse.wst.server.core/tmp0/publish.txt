@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Nov 06 16:58:51 KST 2020
+org.eclipse.jst.jee.server\:step02_ServletProject=/Library/apache-tomcat-9.0.39/wtpwebapps/step02_ServletProject
+org.eclipse.jst.jee.server\:servlet_practice=/Library/apache-tomcat-9.0.39/wtpwebapps/servlet_practice
