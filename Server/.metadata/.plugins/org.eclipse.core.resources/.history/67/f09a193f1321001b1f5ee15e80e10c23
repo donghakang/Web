@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+
+</script>
+</head>
+<body>
+
+<h1>초간단 계산기</h1></center>
+<form method="post" action="app/calc"  onsubmit="sendData()" target="w">
+A값: <input type="text" name="a" size="20"><br><br>
+B값: <input type="text" name="b" size="20"><br><br>
+<!-- 
+<input type="radio" name="op" value="+">+ &nbsp;&nbsp;
+<input type="radio" name="op" value="-">- &nbsp;&nbsp;
+<input type="radio" name="op" value="*">* &nbsp;&nbsp;
+<input type="radio" name="op" value="/">/ <br><br> -->
+
+
+<input type="submit" value="처리">
+</form>
+</body>
+</html>
