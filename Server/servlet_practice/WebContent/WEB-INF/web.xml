@@ -9,4 +9,20 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+    <servlet>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>com.ezen.exam.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/hello.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TestForm</servlet-name>
+    <servlet-class>com.calc.TestForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestForm</servlet-name>
+    <url-pattern>/testform.do</url-pattern>
+  </servlet-mapping>
 </web-app>
