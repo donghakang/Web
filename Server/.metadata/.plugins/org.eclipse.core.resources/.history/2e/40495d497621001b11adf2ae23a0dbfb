@@ -40,7 +40,7 @@
 			</td>
 			<td>
 				기타 전달하고 싶은 내용?<br>
-				<textarea name="comment" rows="10" cols="50"></textarea>
+				<textarea name="coment" rows="10" cols="50"></textarea>
 			</td>
 		</tr>
 		<tr>
