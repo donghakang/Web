@@ -41,11 +41,6 @@ public class TestForm extends HttpServlet {
 		response.getWriter().append("<li>" + "거주지역 : " + address + "</li>");
 		response.getWriter().append("<li>" + "비밀번호 : " + pwd + "</li>");
 		response.getWriter().append("<li>" + "하고싶은말 : " + comment + "</li>");
-		
-		for (String car : cars) {
-			response.getWriter().append("<li>" + "보유한 차 : " + car + "</li>");
-		}
-		
 		response.getWriter().append("<li>" + "아이디 : " + id + "</li>");
 		// 3. 출력
 		
