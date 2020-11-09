@@ -1,0 +1,12 @@
+﻿step01_ServletProject -- Dynamic Web Project
+                         dynamic web module version:2.5
+                         context root :lab
+                         content directory : web
+                         Generate web.xml  deployment descriptor선택
+     src
+        com.ezen.exam
+	        HelloServlet.java  --servlet  / doGet()
+	        NextServlet.java   --servlet  / doGet()
+              
+     web
+    

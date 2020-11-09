@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>        <!-- 절대경로 -->
+<form action="/lab/post.do"   method="post">
+	이름 : <input type="text"  name="name"><br>
+	점수 : <input type="text"  name="score"><br>
+	<input type="submit"  value="전송">
+	<input type="reset"  value="취소">
+</form>
+</body>
+</html>
+<!-- 
+	POST방식
+	http://localhost:8080/lab/post.do  <--데이타가 URL에 매핑이 되지 않는다
+	
+	/lab
+	  postTest.html
+	  getTest.html
+	  post.do
+	  get.do
+-->
+

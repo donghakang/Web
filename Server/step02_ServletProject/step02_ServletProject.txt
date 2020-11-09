@@ -1,0 +1,51 @@
+﻿step02_ServletProject -- Dynamic Web Project
+                         dynamic web module version:4.0
+                         context root :lab
+                         content directory : web
+                         Generate web.xml  deployment descriptor선택(X)
+
+     src
+        com.ezen.exam
+             HelloServlet.java  --servlet  / doGet()선택 
+             NextServlet.java   --servlet  / doGet()선택
+        com.ezen.method   
+             GetServlet.java    --servlet  / doGet()선택 -->name:GET, urlpattern:/get.do  
+             PostServlet.java   --servlet  / doPost()선택 -->name:POST, urlpattern:/post.do 
+             PostServlet2.java  --servlet  / doPost()선택 -->name:POST2, urlpattern:/post2.do
+             InsertServlet.java --servlet  / doPost()선택 -->name:Insert, urlpattern:/insert.do
+             ListServlet.java   --servlet  / doPost()선택 -->name:List, urlpattern:/list.do
+     web
+       getTest.html
+       postTest.html
+       postTest2.html
+       dbTest.html
+       dbschma.sql
+       
+[경로]  http://localhost:8080/lab/get.do
+/lab
+   get.do
+   getTest.html 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
