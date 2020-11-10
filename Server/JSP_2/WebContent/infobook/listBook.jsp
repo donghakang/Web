@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 
 <%
-	response.setContentType("text/html;charset=UTF-8");
+response.setContentType("text/html;charset=UTF-8");
 
 // Connection
 Connection conn = null;
