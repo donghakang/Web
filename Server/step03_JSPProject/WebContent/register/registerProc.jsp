@@ -15,12 +15,9 @@ request.setCharacterEncoding("UTF-8");
 <jsp:useBean id="mem" class="register.RegisterEntity" scope="session"/>
 <jsp:setProperty property="*" name="mem"/>
 <%
-	String post1 = request.getParameter("post1");
-	String post2 = request.getParameter("post2");
-	
-	mem.setMem_zipcode(post1+"-"+post2);
+	String fullAddr = request.getParameter("mem_addr") + " " + request.getParameter("mem_addr_detail");
+	mem.setMem_addr(fullAddr);
 %>
-
 <form name="regForm" method="post" action="registerInsert.jsp">
 <table width="80%" align="center" border="0" cellspacing="0"
 	cellpadding="5">
@@ -58,7 +55,7 @@ request.setCharacterEncoding("UTF-8");
 			</tr>
 			<tr>
 				<td>주소</td>
-				<td>(<%=mem.getMem_zipcode() %>) <%=mem.getMem_addr() %></td>
+				<td><%=mem.getMem_addr()%> (<%=mem.getMem_zipcode()%>)</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

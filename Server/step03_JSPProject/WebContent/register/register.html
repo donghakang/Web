@@ -9,9 +9,9 @@
 	
 	function jusoCallBack(roadAddrPart1, addrDetail, zipNo) {
 		document.getElementById("mem_addr").value = roadAddrPart1;
-		document.getElementById("zipcode").value = zipNo;
+		document.getElementById("mem_zipcode").value = zipNo;
 		document.getElementById("mem_addr_detail").value = addrDetail;
-		document.getElementById("zipcode").readOnly = true;
+		document.getElementById("mem_zipcode").readOnly = true;
 		document.getElementById("mem_addr").readOnly = true;
 	}	
 	
@@ -59,7 +59,7 @@
           <tr>
           	<td>주소</td>
           	<td colspan="2">
-          	<input type="text" id="zipcode" name="zipcode" size="10"/>
+          	<input type="text" id="mem_zipcode" name="mem_zipcode" size="10"/>
           	<input type="button" name="search" value="우편번호 검색" onclick="searchAddr()"/><br />
           	<input type="text" id="mem_addr" name="mem_addr" size="60"/>
           	<input type="text" id="mem_addr_detail" name="mem_addr_detail" size="60"/></td>
