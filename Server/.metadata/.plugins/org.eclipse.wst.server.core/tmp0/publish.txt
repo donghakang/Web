@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Wed Nov 11 14:42:24 KST 2020
+#Wed Nov 11 17:26:58 KST 2020
+org.eclipse.jst.jee.server\:JSP_3=/Library/apache-tomcat-9.0.39/wtpwebapps/JSP_3
 org.eclipse.jst.jee.server\:step03_JSPProject=/Library/apache-tomcat-9.0.39/wtpwebapps/step03_JSPProject
 org.eclipse.jst.jee.server\:Address_JSP=/Library/apache-tomcat-9.0.39/wtpwebapps/Address_JSP
 org.eclipse.jst.jee.server\:JSP_2=/Library/apache-tomcat-9.0.39/wtpwebapps/JSP_2
