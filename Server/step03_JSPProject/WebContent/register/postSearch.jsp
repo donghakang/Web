@@ -1,3 +1,6 @@
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="javax.sql.DataSource"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -46,16 +49,31 @@
 				Connection conn = null;
 				Statement stmt = null;
 				ResultSet rs = null;
+				DataSource ds = null;
 
 				try {
-				  Class.forName("oracle.jdbc.driver.OracleDriver");
-				  conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE", "edu", "1234");
+				  Context context = new InitialContext();
+				  Context env = (Context)context.lookup("java:comp/env");
+				  ds=(DataSource)env.lookup("jdbc/ora");
+				  // ds-(DataSource)env.lookup("java:comp/env/jdbc/ora");
+				  
+				  conn = ds.getConnection();
 				  conn.setAutoCommit(false);
-				} catch (ClassNotFoundException e) {
-				  e.printStackTrace();
 				} catch (SQLException e) {
 				  e.printStackTrace();
 				}
+				/* try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				conn = DriverManager.getConnection(
+				"jdbc:oracle:thin:@127.0.0.1:1521:XE",
+				"edu", "1234"
+				);
+				conn.setAutoCommit(false);      
+				} catch (SQLException e) {
+				e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				} */
 				%>
 				<br>
 				<table width="100%" class="join_table">

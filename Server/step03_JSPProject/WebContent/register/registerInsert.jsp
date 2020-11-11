@@ -1,9 +1,13 @@
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="javax.sql.DataSource"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,31 +16,42 @@
 </head>
 
 <body>
-<jsp:useBean id="mem" class="register.RegisterEntity" scope="session"/>
-<jsp:setProperty property="*" name="mem"/>
-<%
-	Connection conn = null;
+	<jsp:useBean id="mem" class="register.RegisterEntity" scope="session" />
+	<jsp:setProperty property="*" name="mem" />
+	<%
+	  Connection conn = null;
+	DataSource ds = null;
 
 	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@127.0.0.1:1521:XE",
-				"edu", "1234");
+		Context context = new InitialContext();
+		Context env = (Context) context.lookup("java:comp/env");
+		ds = (DataSource) env.lookup("jdbc/ora");
+		// ds-(DataSource)env.lookup("java:comp/env/jdbc/ora");
+
+		conn = ds.getConnection();
 		conn.setAutoCommit(false);
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
-	
-	
+	/* try {
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	conn = DriverManager.getConnection(
+	"jdbc:oracle:thin:@127.0.0.1:1521:XE",
+	"edu", "1234"
+	);
+	conn.setAutoCommit(false);      
+	} catch (SQLException e) {
+	e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+	e.printStackTrace();
+	} */
+
 	//--- SQL insert
 	int n = 0;
-	
+
 	PreparedStatement pstmt = null;
-	
-	
-	try { 
+
+	try {
 		String sql = "INSERT INTO MEMBER VALUES (?, ?, ?, ?, ? ,? , ?)";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, mem.getMem_id());
@@ -48,26 +63,27 @@
 		pstmt.setString(7, mem.getMem_addr());
 		n = pstmt.executeUpdate();
 		if (n > 0) {
-%>
-		<b><%=mem.getMem_name() %></b>님 회원가입 되셨습니다.
-<%
-		}
+	%>
+	<b><%=mem.getMem_name()%></b>님 회원가입 되셨습니다.
+	<%
+	  }
 	} catch (SQLException e) {
-		e.printStackTrace();
-		try {
-			conn.rollback();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-	} finally {
-		try {
-			if (pstmt != null) pstmt.close();
-			if (conn != null) conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	e.printStackTrace();
+	try {
+	conn.rollback();
+	} catch (SQLException e1) {
+	e1.printStackTrace();
 	}
-
-%>
+	} finally {
+	try {
+	if (pstmt != null)
+		pstmt.close();
+	if (conn != null)
+		conn.close();
+	} catch (SQLException e) {
+	e.printStackTrace();
+	}
+	}
+	%>
 </body>
 </html>
