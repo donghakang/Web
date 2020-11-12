@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.ezen.dao.LoginDao"/>
 </qualifiedTypeNameHistroy>
