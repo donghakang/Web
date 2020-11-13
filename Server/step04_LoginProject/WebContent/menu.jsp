@@ -48,8 +48,8 @@
 	<%
 		} else {
 	%>			
-			<a href="">사원전체보기 </a>
-			<a href="">사원추가하기 </a>
+			<a href="/log/list">사원전체보기 </a>
+			<a href="/log/emptest/empInsert.jsp">사원추가하기 </a>
 			<a href="/log/logout">로그아웃 </a>
 			<span id=""> <b><%=entity.getName() %></b>님이 로그인 하셨습니다. &nbsp;&nbsp;
 			현재 소유하신 포인터는 <b><%=entity.getPoint() %></b>점 입니다. </span>

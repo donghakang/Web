@@ -30,14 +30,11 @@ public class LoginServlet extends HttpServlet {
 		LoginEntity entity = biz.getLoginUser(id, pwd);
 		if (entity != null) {
 			System.out.println("ok");
-			// sesssion 설정
 			HttpSession session = request.getSession();
 			session.setAttribute("logOK", entity); // session name = logOK
 
 			response.sendRedirect("/log/logtest/loginOK.jsp");
 		} else {
-			System.out.println("fail");
-
 			response.sendRedirect("/log/logtest/loginFail.jsp");
 		}
 	}
