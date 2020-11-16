@@ -15,9 +15,12 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="book.dto.BookDTO"/>
     <fullyQualifiedTypeName name="book.dao.BookDAO"/>
-    <fullyQualifiedTypeName name="common.JdbcTemplate"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="book.biz.BookBiz"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="product.biz.ProductBiz"/>
+    <fullyQualifiedTypeName name="product.dao.ProductDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="common.JdbcTemplate"/>
 </qualifiedTypeNameHistroy>
