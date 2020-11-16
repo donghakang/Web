@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+<Resource
+	name="jdbc/ora"
+	author="Container"
+	type="javax.sql.DataSource"
+	username="edu"
+	password="1234"
+	driverClassName="oracle.jdbc.driver.OracleDriver"
+	url="jdbc:oracle:thin:@127.0.0.1:1521:XE">
+</Resource>
+
+<Resource
+	name="jdbc/mysql"
+	author="Container"
+	type="javax.sql.DataSource"
+	username="root"
+	password="1234"
+	driverClassName="com.mysql.cj.jdbc.Driver"
+	url="jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC">
+</Resource>
+
+</Context>
