@@ -45,14 +45,15 @@ public class LoginServlet extends HttpServlet {
 		if (loginBiz.getLoginUser(userId, pass)) {
 			// 로그인 확인
 			// - 세션 시작
-
+			System.out.println("LOGIN SUCCESSFUL");
 			HttpSession session = request.getSession();
 			session.setAttribute("loginComplete", userId);
 
-			response.sendRedirect("home.html");
+			response.sendRedirect("home.jsp");
 		} else {
 			// 로그인 실패
-			response.sendRedirect("fail.html");
+			System.out.println("LOGIN FAILED");
+			response.sendRedirect("fail.jsp");
 		}
 
 	}

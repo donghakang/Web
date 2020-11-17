@@ -6,6 +6,7 @@
 
 package product.biz;
 
+import static common.JdbcTemplate.close;
 import static common.JdbcTemplate.getConnection;
 
 import java.sql.Connection;
@@ -42,6 +43,7 @@ public class ProductBiz {
 		Connection conn = getConnection();
 		ProductDAO loginDAO = new ProductDAO(conn);
 		success = loginDAO.loginCheck(userId, pass);
+		close(conn);
 		return success;
 	}
 
@@ -54,6 +56,10 @@ public class ProductBiz {
 		ArrayList<Product> list = null;
 		// 코드를 입력 하시오
 
+		Connection conn = getConnection();
+		ProductDAO dao = new ProductDAO(conn);
+		list = dao.productList();
+		close(conn);
 		return list;
 	}
 
@@ -79,9 +85,10 @@ public class ProductBiz {
 	 * @return boolean 공지사항 저장의 성공 여부
 	 */
 	public boolean productInsert(Product n) {
-
-		boolean success = false;
-
+		Connection conn = getConnection();
+		ProductDAO dao = new ProductDAO(conn);
+		boolean success = dao.productInsert(n);
+		close(conn);
 		return success;
 	}
 }

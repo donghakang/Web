@@ -1,49 +1,77 @@
 <!--
 * NAME		: productList.jsp
-* DESC		: °øÁö»çÇ× ¸ñ·Ï ÆäÀÌÁö
+* DESC		: ê³µì§€ì‚¬í•­ ëª©ë¡ í˜ì´ì§€
 * VER		: 1.0
 -->
 
-<%@ page contentType="text/html;charset=euc-kr" %>
-<%@ page import ="product.entity.Product, java.util.ArrayList" %>
+<%@page import="product.entity.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+%>
+<%@ include file="../menu.jsp"%>
 
 <HTML>
-	<HEAD>
-		<TITLE>»óÇ°ÀüÃ¼Á¶È¸ </TITLE>
-	</HEAD>
+<HEAD>
+<TITLE>ìƒí’ˆì „ì²´ì¡°íšŒ</TITLE>
+</HEAD>
+<style>
+h1 {
+	color: #b1bfca
+}
 
-	<BODY>
-		<P>
-		<P align=center>
-		<FONT color=#0000ff face=±¼¸² size=5>
-		<STRONG>»óÇ°ÀüÃ¼Á¶È¸ </STRONG></FONT></P>
-		<P>
-		<CENTER>
+td {
+	text-align: center;
+}
 
-		<TABLE border=0 width=70% cellpadding=4 cellspacing=4 style="font-size:10pt">
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+</style>
+<BODY>
+	<%
+	ArrayList<Product> list = (ArrayList<Product>)request.getAttribute("productList");
+	if (list != null) {
+%>
+	<TABLE border=0 width=70% cellpadding=4 cellspacing=4
+		style="font-size: 10pt"
+	>
+		<caption>
+			<h1>ìƒí’ˆì „ì²´ì¡°íšŒ</h1>
+		</caption>
 		<TR>
-			<TH width=5% bgcolor=#9999FF><FONT color=white face="±¼¸²"><NOBR>¹øÈ£</NOBR></FONT></TH>
-			<TH width=40% bgcolor=#9999FF><FONT color=white face="±¼¸²"><NOBR>»óÇ°¸í</NOBR></FONT></TH>
-			<TH width=10% bgcolor=#9999FF><FONT color=white face="±¼¸²"><NOBR>µî·ÏÀÚ</NOBR></FONT></TH>
-			<TH width=15% bgcolor=#9999FF><FONT color=white face="±¼¸²"><NOBR>µî·ÏÀÏÀÚ</NOBR></FONT></TH>
+			<TH width=5% bgcolor=#e3f2fd><FONT color=#888888 face="êµ´ë¦¼"><NOBR>ë²ˆí˜¸</NOBR></FONT></TH>
+			<TH width=40% bgcolor=#e3f2fd><FONT color=#888888 face="êµ´ë¦¼"><NOBR>ìƒí’ˆëª…</NOBR></FONT></TH>
+			<TH width=10% bgcolor=#e3f2fd><FONT color=#888888 face="êµ´ë¦¼"><NOBR>ë“±ë¡ì</NOBR></FONT></TH>
+			<TH width=15% bgcolor=#e3f2fd><FONT color=#888888 face="êµ´ë¦¼"><NOBR>ë“±ë¡ì¼ì</NOBR></FONT></TH>
 		</TR>
+		<%
+		for (int i = 0; i < list.size(); i ++) {
+%>
+		<tr>
+			<td><%=list.get(i).getNum() %></td>
+			<td><%=list.get(i).getName() %></td>
+			<td><%=list.get(i).getWriter() %></td>
+			<td><%=list.get(i).getInDate() %></td>
+		</tr>
+		<%
+		}
+%>
 
-		<%-- ÆäÀÌÁö Ãâ·Â --%>
 
+	</TABLE>
 
-
-
-
-       <!--  ±¸ÇöÇØ º¸¼¼¿ä. JSTLÀ» ÀÌ¿ëÇÏ½Ã¿À -->
-
-
-
-
-
-
-		</TABLE>
-		</CENTER>
-		<p>
-		<FONT size=2>&nbsp;&nbsp;&nbsp;[<A href="INPUT" target="main">±Û¾²±â</A>] </FONT>
-	</BODY>
+<%
+	} else {
+%>
+	<span id="warning">ìƒí’ˆì´ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.</span>
+<%
+	}
+%>
+	<!--  êµ¬í˜„í•´ ë³´ì„¸ìš”. JSTLì„ ì´ìš©í•˜ì‹œì˜¤ -->
+	<FONT size=2>&nbsp;&nbsp;&nbsp;[<A href="INPUT" target="main">ê¸€ì“°ê¸°</A>]
+	</FONT>
+</BODY>
 </HTML>

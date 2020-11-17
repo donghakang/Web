@@ -14,7 +14,7 @@ import book.dto.LoginDTO;
 /**
  * Servlet implementation class LogoutServlet
  */
-@WebServlet(urlPatterns = {"/logout"}, name = "LOGOUT")
+@WebServlet(urlPatterns = {"/LOGOUT"}, name = "LOGOUT")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

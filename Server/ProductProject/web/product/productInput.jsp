@@ -1,60 +1,113 @@
-<!--
-* NAME		: productInput.jsp
-* DESC		: °øÁö»çÇ× ÀÔ·Â ÆäÀÌÁö
-* VER		: 1.0
--->
-
-<%@ page contentType="text/html;charset=euc-kr" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+%>
+<%@ include file="../menu.jsp"%>
+<!DOCTYPE html>
 <html>
 <head>
-<Script Language ="JavaScript">
+<meta charset="UTF-8">
+<title>ìƒí’ˆ ì •ë³´ ë“±ë¡</title>
+<Script>
 function confirm(){
-	if (document.input.writer.value==''){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
-		document.input.id.focus();
-		return;
-	}
 	if(document.input.title.value==''){
-		alert("Á¦¸ñÀ» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ì œëª©ì„ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		document.input.title.focus();
 		return;
 	}
 	if(document.input.content.value==''){
-		alert("³»¿ëÀ» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
-		document.input.cont.focus();
+		alert("ë‚´ìš©ì„ ì…ë ¥í•˜ì‹­ì‹œìš”.");
+		document.input.content.focus();
 		return;
 	}
 	document.input.submit();
 }
 </Script>
-</head>
+<style>
+h1 {
+	color: #b1bfca
+}
 
+#input_table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#product_name {
+	width: 80%;
+}
+
+#product_description {
+	width: 80%;
+	height: 200px;
+}
+
+.buttons {
+    display: flex;
+  	justify-content: center;
+  	padding: 18px;
+}
+
+#save {
+	margin-right: 10px;
+	padding: 6px 18px;
+}
+
+#cancel {
+	margin-left: 10px;
+	padding: 6px 18px;
+}
+
+tr {
+	height: 40px;
+}
+
+th {
+	background-color: #e3f2fd;
+	font-weight: normal;
+	color: #888888;
+}
+
+td {
+	padding: 4px 2px 4px 4px;
+}
+</style>
+
+</head>
 <body>
-<% String writer=(String)session.getAttribute("user");%>
-<center><h1>»óÇ°µî·Ï</h1>
-<form action="SAVE" method=post  name=input target="main">
-    <table border=0>
-      <tr >
-		<td  width=103 bgcolor="8f8fbd" align="center">ÀÌ ¸§</td>
-        <td><input type=text  name=writer size="20" value=<%=writer%>></td>
-      </tr>
-      <tr>
-		<td width="103" bgcolor="8f8fbd" align="center">Á¦ ¸ñ</td>
-        <td><input type=text  name=title size="51" ></td>
-      </tr>
-      <tr>
-		<td colspan=2 >
-          <textarea name=content rows=10 cols=70></textarea>
-		</td>
-      </tr>
-      <tr>
-		<td colspan=2 align=center >
-          <input type=button  value="ÀúÀå"  onclick="javascript:confirm();">
-          <input type=reset  value="Ãë¼Ò">
-        </td>
-      </tr>
-    </table>
- </form>
- </center>
+	<%
+		String id = (String) session.getAttribute("loginComplete");
+	%>
+	<form action="/product/SAVE" method="post" name="input">
+	<table id="input_table">
+		<caption>
+			<h1>ìƒí’ˆë“±ë¡</h1>
+		</caption>
+		<tr height="40">
+			<th>ë“±ë¡ì
+			</td>
+			<td><%=id%></td>
+		</tr>
+		<tr>
+			<th>ìƒí’ˆëª…
+			</td>
+			<td>
+				<input type="text" name="title" id="product_name" />
+			</td>
+		</tr>
+		<tr>
+			<th>ë©” ëª¨</th>
+			<td>
+				<textarea name="content" id="content"
+					cols="55" rows="10"
+				></textarea>
+			</td>
+		</tr>
+	</table>
+	<div class="buttons" >
+		<input type=button  id="save" value="ì €ì¥"  onclick="confirm();">
+		<input type="reset" id="cancel" value="ì·¨ì†Œ" />
+	</div>
+	</form>
 </body>
 </html>

@@ -21,3 +21,9 @@ INSERT INTO PRODUCT VALUES(3,'admin',SYSDATE,'LG COOKIE','The Best FeaturePhone'
 COMMIT;
 
 
+
+select max(num) from product;
+
+insert into product values((select max(num)+1 from product), 'admin', SYSDATE, 'SAMSUNG GALAXY', 'The Newest Smartphone');
+
+select * from product;

@@ -30,15 +30,33 @@ a:hover {
 </style>
 </head>
 <body>
+<%
+	String userId = (String)session.getAttribute("loginComplete");
+%>
 	<div id="menu">
 		<div class="contents">
-			<a href="home.html" target="main">HOME</a> 
-			<a href="home.html" target="main">상품등록</a>
-			<a href="home.html" target="main">상품전체조회</a>
+			<a href="/product/home.jsp" target="main">HOME</a> 
+<%
+			if (userId != null) {
+%>
+				<a href="/product/product/productInput.jsp" target="main">상품등록</a>
+				<a href="/product/LIST" target="main">상품전체조회</a>
+<%				
+			}
+%>
 		</div>
 		<div class="log">
-			<a href="">로그인</a>
-			<a href="">로그아웃</a>
+<% 
+			if (userId != null) {
+%>			
+				<a href="/product/LOGOUT">로그아웃</a>
+<%
+			} else {
+%>
+				<a href="/product/index.jsp">로그인</a>
+<%
+			}
+%>			
 		</div>
 	</div>
 </body>

@@ -9,8 +9,21 @@
 <title>상품정보관리</title>
 </head>
 <body>
-<center>
-  <h1> 공지사항 홈페이지입니다.</h1>
- </center>
+<%
+	String id = (String)session.getAttribute("loginComplete");
+
+	if (id != null) {
+%>	
+	<center>
+	  	<h1> <%= id %> 로그인 되었습니다.</h1>
+	 </center>
+<%
+	} else {
+%>
+		<%@ include file= "login.jsp" %>
+<%	
+	}
+%>	 
+
 </body>
 </html>

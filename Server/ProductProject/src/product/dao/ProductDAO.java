@@ -7,6 +7,7 @@
 package product.dao;
 
 import static common.JdbcTemplate.close;
+import static common.JdbcTemplate.commit;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -84,17 +85,15 @@ public class ProductDAO {
 		boolean success = false;
 
 		try {
-			String sql = "INSERT INTO PRODUCT VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO PRODUCT VALUES ((SELECT MAX(NUM)+1 FROM PRODUCT),?,SYSDATE,?,?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, n.getNum());
-			pstmt.setString(2, n.getWriter());
-			pstmt.setString(3, n.getInDate());
-			pstmt.setString(4, n.getName());
-			pstmt.setString(5, n.getDescription());
+			pstmt.setString(1, n.getWriter());
+			pstmt.setString(2, n.getName());
+			pstmt.setString(3, n.getDescription());
 
 			check = pstmt.executeUpdate();
-
 			if (check > 0) {
+				commit(conn);
 				success = true;
 			}
 		} catch (SQLException e) {
@@ -111,9 +110,30 @@ public class ProductDAO {
 	 * @return ArrayList : 공지사항 정보 목록
 	 */
 	public ArrayList<Product> productList() {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
 		ArrayList<Product> arr = new ArrayList<Product>();
 
-		// 구현 하시오
+		try {
+			String sql = "SELECT * FROM PRODUCT ORDER BY NUM ASC";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Product n = new Product();
+				n.setNum(rs.getInt("NUM"));
+				n.setWriter(rs.getString("WRITER"));
+				n.setInDate(rs.getString("INDATE"));
+				n.setName(rs.getString("NAME"));
+				n.setDescription(rs.getString("DESCRIPTION"));
+				arr.add(n);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
 
 		return arr;
 	}

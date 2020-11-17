@@ -9,9 +9,11 @@ package product.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * <pre>
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * </pre>
  * 
  */
+@WebServlet(urlPatterns = {"/LOGOUT"}, name = "LOGOUT")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
@@ -32,8 +35,13 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		HttpSession session = request.getSession();
 
-		// 구현 하시오
+		String id = (String) session.getAttribute("loginComplete");
 
+		if (id != null) {
+			session.removeAttribute("loginComplete");
+			response.sendRedirect("index.jsp");
+		}
 	}
 }
