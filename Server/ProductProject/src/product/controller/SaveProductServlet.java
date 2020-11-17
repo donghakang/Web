@@ -40,6 +40,7 @@ public class SaveProductServlet extends HttpServlet {
 			throws IOException, ServletException {
 
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("EUC-KR");
 
 		HttpSession session = request.getSession();
 

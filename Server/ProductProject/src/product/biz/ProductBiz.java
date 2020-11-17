@@ -73,7 +73,16 @@ public class ProductBiz {
 	public Product productView(String num) {
 
 		Product n = null;
-
+		Connection conn = getConnection();
+		ProductDAO dao = new ProductDAO(conn);
+		
+		try {
+			n = dao.productView(Integer.parseInt(num));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
+		close(conn);
 		return n;
 	}
 
@@ -88,6 +97,27 @@ public class ProductBiz {
 		Connection conn = getConnection();
 		ProductDAO dao = new ProductDAO(conn);
 		boolean success = dao.productInsert(n);
+		close(conn);
+		return success;
+	}
+
+	public boolean productDelete(String num) {
+		Connection conn = getConnection();
+		ProductDAO dao = new ProductDAO(conn);
+		boolean success = false;
+		try {
+			success = dao.productDelete(Integer.parseInt(num));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		close(conn);
+		return success;
+	}
+
+	public boolean productUpdate(Product n) {
+		Connection conn = getConnection();
+		ProductDAO dao = new ProductDAO(conn);
+		boolean success = dao.productUpdate(n);
 		close(conn);
 		return success;
 	}

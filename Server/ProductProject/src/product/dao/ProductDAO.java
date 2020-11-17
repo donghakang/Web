@@ -8,6 +8,7 @@ package product.dao;
 
 import static common.JdbcTemplate.close;
 import static common.JdbcTemplate.commit;
+import static common.JdbcTemplate.getConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -145,12 +146,81 @@ public class ProductDAO {
 	 * @return Product : 검색된 공지사항정보(Product)
 	 */
 	public Product productView(int num) {
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		Product n = new Product();
-		ResultSet myResult = null;
-
-		// 구현 하시오
+		ResultSet rs = null;
+		
+		try {
+			String sql = "SELECT * FROM PRODUCT WHERE NUM=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				n.setNum(rs.getInt("NUM"));
+				n.setWriter(rs.getString("WRITER"));
+				n.setInDate(rs.getString("INDATE"));
+				n.setName(rs.getString("NAME"));
+				n.setDescription(rs.getString("DESCRIPTION"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
 
 		return n;
 	}
+	
+	
+	public boolean productDelete(int n) {
+		PreparedStatement pstmt = null;
+		int check = 0;
+		boolean success = false;
+
+		try {
+			String sql = "DELETE FROM PRODUCT WHERE NUM=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, n);
+			check = pstmt.executeUpdate();
+			if (check > 0) {
+				commit(conn);
+				success = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+
+		return success;
+	}
+	public boolean productUpdate(Product n) {
+		PreparedStatement pstmt = null;
+		int check = 0;
+		boolean success = false;
+
+		try {
+			String sql = "UPDATE PRODUCT SET NUM=?, WRITER=?, NAME=?, DESCRIPTION=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, n.getNum());
+			pstmt.setString(2, n.getWriter());
+			pstmt.setString(3, n.getName());
+			pstmt.setString(4, n.getDescription());
+
+			check = pstmt.executeUpdate();
+			if (check > 0) {
+				commit(conn);
+				success = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+
+		return success;
+	}
+	
+	
 }

@@ -40,12 +40,13 @@ h1 {
 #product_description {
 	width: 80%;
 	height: 200px;
+	resize: none;
 }
 
 .buttons {
-    display: flex;
-  	justify-content: center;
-  	padding: 18px;
+	display: flex;
+	justify-content: center;
+	padding: 18px;
 }
 
 #save {

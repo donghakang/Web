@@ -1,0 +1,105 @@
+﻿step04_LoginProject  -- Dynamic  Web Project
+                        dynamic web module version : 4.0
+                        context root : log
+                        content directory : web               
+src
+   common   
+       JdbcTemplate.java    --복사
+   com.ezen.controller
+       LoginServlet.java     --servlet   servlet-name:Login / url-pattern:login  doPost()
+       LogoutServlet.java    --servlet   servlet-name:Logout / url-pattern:logout  doGet()
+   com.ezen.biz 
+       LoginBiz.java   --class
+   com.ezen.dao 
+       LoginDao.java  --class
+   com.ezen.entity
+       LoginEntity.java  --class              
+web
+    table_schema   --폴더
+         table.sql     --로그인  and 사원테이블작성(복사)
+    index.jsp
+    menu.jsp
+
+    logtest   --폴더
+       login.jsp  --복사
+       loginOK.jsp
+       loginFail.jsp   
+=================================================
+<수정하기>
+     src
+       common 
+         JdbcTemplate.java  --복사할것
+       com.ezen.controller
+         LoginServlet.java         --servlet   servlet-name:Login/ url-pattern:login/ doPost()체크   
+         LogoutServlet.java       --servlet   servlet-name:Logout/url-pattern:logout/doGet()체크
+		 EmpInsertServlet.java   --servelt   servlet-name:Insert/url-pattern:insert/doPost()체크
+		 EmpListServlet.java      --servelt   servlet-name:List/url-pattern:list/doGet()체크
+		 EmpDeleteServlet.java  --servelt   servlet-name:Delete/url-pattern:delete/doPost()체크   
+         EmpUpdateServlet.java  --servelt  servlet-name:Update/url-pattern:update/doPost()체크                                                  
+                                                                                                
+	   com.ezen.biz
+	     LoginBiz.java     --class
+	     EmpBiz.java
+	   
+	   com.ezen.dao
+	     LoginDao.java     --class
+	     EmpDao.java
+	        
+	   com.ezen.entity
+	     LoginEntity.java  --class
+	     EmpEntity.java                           
+
+     web
+        META-INF
+          context.xml
+        WEB-INF  
+           standard.jar
+           jstl.jar
+                   
+        index.jsp
+        menu.jsp
+        table_schema
+             table.sql   <---로그인 또는 사원테이블작성
+        
+        logtest  --폴더
+           login.jsp
+           loginOk.jsp
+           loginFail.jsp
+		emptest
+		   empInsert.jsp    --복사
+		   empList.jsp      --복사
+		   empUpdate.jsp    --복사    
+========================================
+1. 데이터베이스 설계
+2. 화면설계(MVC패턴)
+3. 테이블생성 --> Entity만들기
+4. 로그인
+5. 사원추가하기
+6. 사원전체보기
+7. 삭제하기 or  수정하기	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   

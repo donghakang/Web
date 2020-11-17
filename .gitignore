@@ -3,3 +3,4 @@ note/
 !image/note/
 tmp/
 *.zip
+/build/

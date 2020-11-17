@@ -14,7 +14,6 @@
 <HTML>
 <HEAD>
 <TITLE>상품전체조회</TITLE>
-</HEAD>
 <style>
 h1 {
 	color: #b1bfca
@@ -29,12 +28,26 @@ table {
 	margin-right: auto;
 	width: 50%;
 }
+
+tr:hover{
+	background-color: #ffe7f9;
+}
 </style>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function viewDetail(i) {
+		window.location.href = '/product/VIEW?num=' + i;
+	}
+</script>
+</HEAD>
+
+
 <BODY>
 	<%
 	ArrayList<Product> list = (ArrayList<Product>)request.getAttribute("productList");
 	if (list != null) {
 %>
+	
 	<TABLE border=0 width=70% cellpadding=4 cellspacing=4
 		style="font-size: 10pt"
 	>
@@ -50,17 +63,16 @@ table {
 		<%
 		for (int i = 0; i < list.size(); i ++) {
 %>
-		<tr>
+		<tr onclick="viewDetail(<%=list.get(i).getNum()%>)">
 			<td><%=list.get(i).getNum() %></td>
 			<td><%=list.get(i).getName() %></td>
 			<td><%=list.get(i).getWriter() %></td>
 			<td><%=list.get(i).getInDate() %></td>
-		</tr>
-		<%
+		</tr>		
+		
+<%
 		}
 %>
-
-
 	</TABLE>
 
 <%
