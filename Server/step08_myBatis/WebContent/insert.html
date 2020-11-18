@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#sbtn').click(function() {
+		var d = "eno="+$('#eno').val();
+		
+		$.ajax({
+			type:"post",
+			url:"searchno",
+			data:d,
+			dataType:"html",
+			success:function(data){
+				$("#display").html(data);
+			},
+		})
+		
+	})
+})
+
+</script>
+
 </head>
 <body>
 <a href="/list">전체보기</a>

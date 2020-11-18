@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 <h2>전체보기</h2>
@@ -29,14 +30,25 @@
 				<td><%=ob.getEname()%></td>
 				<td><%=ob.getPhone()%></td>
 				<td><%=ob.getDept()%></td>
-				<td>수정</td>
-				<td>삭제</td>
+				<td>
+					<form action="updateEmp.jsp" method="post">
+						<a href="javascript:;" onclick="parentNode.submit();">수정</a>
+						<input type="hidden" name="eno" value="<%=ob.getEno()%>"/>
+						<input type="hidden" name="ename" value="<%=ob.getEname()%>"/>
+						<input type="hidden" name="phone" value="<%=ob.getPhone()%>"/>
+						<input type="hidden" name="dept" value="<%=ob.getDept()%>"/>
+					</form>
+				</td>
+				<td>
+					<a href="delete?eno=<%=ob.getEno() %>" onclick="return confirm('삭제할까요?');">삭제</a>
+				</td>
 			</tr>
 <%
 		}//end for
 	}// end if
 %>	
 </table>
+
 </body>
 </html>
 
