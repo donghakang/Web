@@ -1,0 +1,42 @@
+step08_myBatis     --Dynamic Web Project
+                     context root : /
+                     content directory : WebContent
+
+src
+   mybatis
+       config.property         ---file  ==> url/user/password
+       myBatis-config.xml      ---xml   ==> DB연결
+       sqlMapper.xml           ---xml   ==> CRUD작성 
+   dao
+      EmpDao.java         --- class
+   entity
+      Emp.java            --- class 
+   controller
+      InsertEmp.java   ---servlet  ( Insert  / insert / doPost() )
+      ListEmp.java     ---servlet  ( List  / list / doGet() )
+      SearchEmp.java   ---servlet  ( Search / search / doGet )
+      SearchNo.java    ---servlet  ( SearchNo / searchno / doPost )
+      UpdateEmp.java    ---servlet ( Update / update / doPost )
+      DeleteEmp.java    ---servlet ( Delete / delete / doGet )
+
+WebContent
+      WEB-INF
+         lib
+            mybatis-3.4.6.jar
+            standard.jar
+            jstl.jsr
+      table.sql
+      insert.html
+      list.jsp
+      searchNo.jsp
+      updateEmp.jsp
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
