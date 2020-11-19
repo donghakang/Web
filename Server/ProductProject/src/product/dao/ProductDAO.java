@@ -8,13 +8,11 @@ package product.dao;
 
 import static common.JdbcTemplate.close;
 import static common.JdbcTemplate.commit;
-import static common.JdbcTemplate.getConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import product.entity.Product;
@@ -149,13 +147,13 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		Product n = new Product();
 		ResultSet rs = null;
-		
+
 		try {
 			String sql = "SELECT * FROM PRODUCT WHERE NUM=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				n.setNum(rs.getInt("NUM"));
 				n.setWriter(rs.getString("WRITER"));
@@ -171,8 +169,7 @@ public class ProductDAO {
 
 		return n;
 	}
-	
-	
+
 	public boolean productDelete(int n) {
 		PreparedStatement pstmt = null;
 		int check = 0;
@@ -201,12 +198,13 @@ public class ProductDAO {
 		boolean success = false;
 
 		try {
-			String sql = "UPDATE PRODUCT SET NUM=?, WRITER=?, NAME=?, DESCRIPTION=?";
+			String sql = "UPDATE PRODUCT SET WRITER=?, NAME=?, DESCRIPTION=? WHERE NUM=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, n.getNum());
-			pstmt.setString(2, n.getWriter());
-			pstmt.setString(3, n.getName());
-			pstmt.setString(4, n.getDescription());
+
+			pstmt.setString(1, n.getWriter());
+			pstmt.setString(2, n.getName());
+			pstmt.setString(3, n.getDescription());
+			pstmt.setInt(4, n.getNum());
 
 			check = pstmt.executeUpdate();
 			if (check > 0) {
@@ -221,6 +219,5 @@ public class ProductDAO {
 
 		return success;
 	}
-	
-	
+
 }

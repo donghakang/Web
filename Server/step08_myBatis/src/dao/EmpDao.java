@@ -25,6 +25,7 @@ public class EmpDao {
 			// factory=new SqlSessionFactoryBuilder().build(reader, "env");
 			// environment id="env"에 연결
 		} catch (IOException e) {
+
 		}
 	}
 	// ----------------------------------------------------------------------

@@ -32,6 +32,13 @@ table {
 tr:hover{
 	background-color: #ffe7f9;
 }
+
+#input{
+	margin-top: 200px;
+	padding-left: auto;
+	padding-right: auto;
+	text-align: center;
+}
 </style>
 <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
@@ -83,7 +90,7 @@ tr:hover{
 	}
 %>
 	<!--  구현해 보세요. JSTL을 이용하시오 -->
-	<FONT size=2>&nbsp;&nbsp;&nbsp;[<A href="INPUT" target="main">글쓰기</A>]
-	</FONT>
+	<div size=2 id="input">&nbsp;&nbsp;&nbsp;<A href="product/productInput.jsp" target="main">[ 글쓰기 ]</A>
+	</div>
 </BODY>
 </HTML>

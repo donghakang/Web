@@ -30,15 +30,15 @@ h1 {
 #input_table {
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 30%;
 }
 
 #product_name {
-	width: 80%;
+	width: 500px;
 }
 
-#product_description {
-	width: 80%;
+textarea {
+	width: 500px;
 	height: 200px;
 	resize: none;
 }
@@ -64,6 +64,7 @@ tr {
 }
 
 th {
+	width: 80px;
 	background-color: #e3f2fd;
 	font-weight: normal;
 	color: #888888;
@@ -100,7 +101,7 @@ td {
 			<th>메 모</th>
 			<td>
 				<textarea name="content" id="content"
-					cols="55" rows="10"
+					cols="num" rows="num"
 				></textarea>
 			</td>
 		</tr>

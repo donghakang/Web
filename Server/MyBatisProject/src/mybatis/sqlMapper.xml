@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my.productMapper"> <!-- namespace:이름공간 -->
+	<insert id="insertProduct" parameterType="entity.Product">
+		INSERT INTO PRODUCT(NO, ITEM, PRICE, REGDATE)
+		VALUES(SEQ_NO.NEXTVAL, #{item}, #{price}, #{regdate})
+	</insert>
+
+	<select id="listProduct" resultType="entity.Product">
+		<![CDATA[
+		SELECT *
+		FROM PRODUCT
+		]]>
+	</select>
+	
+	<delete id="deleteProduct" parameterType="java.lang.Integer">
+		DELETE FROM PRODUCT WHERE NO=#{no}
+	</delete>
+	
+	<select id="selectProduct" parameterType="java.lang.Integer" resultType="entity.Product">
+		SELECT * FROM PRODUCT WHERE NO=#{no}
+	</select>
+	
+	<update id="updateProduct" parameterType="entity.Product">
+		UPDATE PRODUCT 
+		SET ITEM=#{item}, PRICE=#{price}, REGDATE=#{regdate}
+		WHERE NO=#{no}
+	</update>
+	
+	<select  id="searchProduct" parameterType="hashmap" resultType="entity.Product">
+		<![CDATA[
+		SELECT * 
+		FROM PRODUCT
+		WHERE PRICE=#{price} AND ITEM LIKE #{item}
+		]]>
+	</select>
+
+<!-- 	<select id="listEmp" resultType="entity.Emp">
+		SELECT * FROM EMP
+	</select>
+	
+	<update id="updateEmp" parameterType="entity.Emp">
+		UPDATE EMP SET PHONE=#{phone} DEPT=#{dept} WHERE ENO=#{eno}
+	</update>
+	
+	<delete id="deleteEmp" parameterType="java.lang.Integer">
+		DELETE FROM EMP WHERE ENO=#{eno}
+	</delete>
+	
+	<select id="searchNo" parameterType="java.lang.Integer" resultType="entity.Emp">
+		SELECT * FROM EMP 
+		WHERE ENO=#{eno}
+	</select>
+
+	<select  id="searchEmp" parameterType="hashmap" resultType="entity.Emp">
+		<![CDATA[
+		SELECT * 
+		FROM EMP
+		WHERE ENO <= #{eno} AND DEPT LIKE #{dept}
+		]]>
+	</select> -->
+
+</mapper>
+
+
+
+
+
+
+
+
+
