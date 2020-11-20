@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>이미지 업로드</title></head>
+<script src="scriptImageBoard.js" charset="UTF-8"></script>
+</head>
+<body>
+	<h3>이미지 업로드</h3>
+	<hr/>
+	<form name="imageBoardWriteForm" method="post" enctype="multipart/form-data" 
+	action="/board/imgBoardWrite.do" >
+	<table cellpadding="3">
+		<tr>
+			<td><b>상품코드</b></td>
+			<td><input type="text" name="imageId"></td>
+		</tr>
+		<tr>
+			<td><b>상품명</b></td>
+			<td><input type="text" name="imageName"></td>
+		</tr>
+		<tr>
+			<td><b>단가</b></td>
+			<td><input type="text" name="imagePrice"></td>
+		</tr>
+		<tr>
+			<td><b>개수</b></td>
+			<td><input type="text" name="imageQty"></td>
+		</tr>
+		<tr>
+			<td><b>내용</b></td>
+			<td>
+			<textarea rows="12" cols="40" name="imageContent"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td><b>이미지</b></td>
+			<td><input type="file" name="imagepath" size="40"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+			<input type="button" value="이미지등록" onclick="checkImageBoardWrite()">
+			<input type="reset" value="취소">
+			<input type="button" value="목록" onclick="location.href='/board/imgBoardList.do?pg=1'">
+			</td>
+		</tr>
+	</table>
+	</form>
+	<hr/>
+</body>
+</html>
+
+
+

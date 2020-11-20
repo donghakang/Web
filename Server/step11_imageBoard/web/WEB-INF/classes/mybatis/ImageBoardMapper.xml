@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.ImageBoardMapper">
+	<insert id="imageBoardInsert" parameterType="com.bcu.entity.ImageBoardEntity">
+		<![CDATA[
+		INSERT INTO IMAGEBOARD VALUES(
+				SEQ_IMAGEBOARD.NEXTVAL,
+		        #{imageId},#{imageName},#{imagePrice},#{imageQty},
+		        #{imageContent},#{imagePath},SYSDATE)
+		]]>
+	</insert>
+	
+	<select id="getImageBoardList" parameterType="hashmap"  
+	        resultType="com.bcu.entity.ImageBoardEntity">
+	    <![CDATA[
+		SELECT SEQ,IMAGEID, IMAGENAME,IMAGEPRICE, IMAGEQTY,
+		       IMAGECONTENT, IMAGEPATH,
+		       TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME
+		FROM (SELECT ROWNUM RN, AA.*
+		      FROM (SELECT * FROM IMAGEBOARD ORDER BY SEQ DESC) AA)
+		WHERE RN >= #{startNum} AND RN <= #{endNum}  
+	    ]]>
+	</select>
+	
+	<select id="getTotalArticle" resultType="int">
+		SELECT COUNT(*) FROM IMAGEBOARD
+	</select> 
+	
+	<delete id="imageBoardDelete" parameterType="list">
+		<![CDATA[
+		DELETE FROM IMAGEBOARD WHERE SEQ IN]]>
+		<foreach collection="list" item="item" open="("  close=")"  separator=",">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<select id="getImagePath" parameterType="list" resultType="com.bcu.entity.ImageBoardEntity">
+		<![CDATA[
+		SELECT * FROM IMAGEBOARD WHERE SEQ IN ]]>
+		<foreach collection="list" item="item" open="("  close=")"  separator=",">
+			#{item}
+		</foreach>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

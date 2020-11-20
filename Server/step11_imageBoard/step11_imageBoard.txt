@@ -1,0 +1,65 @@
+step11_imageBoard-- Dynamic Web Project
+		        dynamic web module version : 3.0
+		        context root : imageboard
+		        content directory : web 
+                        Generate web.xml deployment descriptor(체크)          
+		        WEB-INF 폴더밑에 classes폴더를 만들고 build폴더를 삭제할것
+--------------------------------------------------------------------------
+src
+   com.bcu.controller
+       ControlServlet.java  --복사
+   com.bcu.dao
+       ImageBoardDao.java
+       ImageBoardPaging.java   --복사
+   com.bcu.entity
+       ImageBoardEntity.java
+   com.bcu.action
+      CommandProcess.java   ---interface
+      ImageBoardListAction.java    
+      ImageBoardWriteAction.java  
+      ImageBoardWriteFormAction.java  
+      ImageBoardDeleteAction.java            
+   mybatis
+      mybatis-config.xml
+      ImageBoardMapper.xml
+      config.properties
+
+web
+   index.html
+   storage       --저장소만들기
+   table_schema
+       imgboard.sql
+   
+   WEB-INF
+       lib
+          jstl.jar
+          standard.jar
+          mybatis-3.2.8.jar
+          cos.jar
+          
+       commandPro.properties
+       web.xml
+   imgboard
+       imageBoardList.jsp         --복사    
+       imageBoadeWrite.html   --복사 
+       scriptImageBoard.js       --복사 
+       styleImageBoard.css      --복사
+       imageBoardWriteOK.html
+       imageBoardDeleteOK.html
+=================================================================== 
+[순서]
+1. imageboard.sql에서 테이블만들기 
+2. config.properties  / mybatis-config.xml / ImageBoardMapper.xml 기본 셋팅
+3. commandPro.properties / web.xml
+4. ImageBoardEntity만들기(getter & setter)
+5. index.html 
+6. imageBoardWrite.html작성 
+           
+           
+           
+           
+           
+           
+           
+           
+           

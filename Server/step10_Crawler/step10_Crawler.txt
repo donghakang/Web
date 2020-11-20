@@ -1,0 +1,15 @@
+step10_Crawler  -- Dynamic Web Project
+		           dynamic web module version : 3.1
+		           context root : /
+		           content directory : web 
+       	            
+src
+    util.crawler
+        Crawler.java
+
+web
+    index.jsp
+    lunchData.jsp
+    WEB-INF
+        lib
+          jsoup-1.10.3.jar
