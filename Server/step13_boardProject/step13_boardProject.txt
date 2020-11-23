@@ -1,0 +1,75 @@
+step13_boardProject-- Dynamic Web Project
+		        dynamic web module version : 4.0
+		        context root : bbs
+		        content directory : web 
+--------------------------------------------------------------------------
+src
+  controller
+  	ControllerAction.java
+  	CommandAction.java   --interface
+  	
+  com.board.service
+  	BoardWriteService.java 
+  	BoardListService.java    
+  	BoardModifyService.java 
+  	BoardReplyFormService.java
+  	BoardDeleteService.java    
+  com.board.dao
+  	BoardDAO.java
+  com.board.dto
+  	BoardDTO.java
+  	BoardPaging.java
+  		
+  com.login.service
+     LoginService.java
+     LogoutService.java
+  com.login.dao
+  	 LoginDAO.java
+  com.login.dto
+  	 LoginDTO.java
+  	 
+  mybatis
+     	config.propertis
+    	mybatis-config.xml
+    	BoardMapper.xml
+     	LoginMapper.xml
+
+web
+    WEB-INF
+         web.xml
+         commandPro.properties
+    board
+        boardWrite.jsp              --글쓰기(화면)
+        boardInsert.jsp              --글쓰기(DB연동) ==> BoardWriteService.java 변경
+        
+        boardList.jsp                 --글읽기(화면)     ==>BoardListService.java로 코드 분리
+        boardView.jsp               --글내용보기(화면)
+        
+        boardModify.jsp             --글수정(화면)
+        boardUpdate.jsp             --글수정(DB연동) ==>BoardModifyService.java 로 변경
+        
+        boardReplyForm.jsp        --답글(화면)
+        boardReply.jsp                --답글(DB연동)    ==>BoardReplyFormService.java로 변경
+              
+        boardDelete.jsp              --글삭제(DB연동)  ==>BoardDeleteService.java로 변경
+        styleBoard.css
+        
+    image
+        reply.gif   --- 복사
+    login   
+       login.jsp
+       loginFail.jsp
+       loginOK.jsp
+    table_schema
+       board.sql   --복사
+       login.sql    --복사
+    index.jsp
+    menu.jsp
+        
+        
+        
+        
+        
+        
+        
+        

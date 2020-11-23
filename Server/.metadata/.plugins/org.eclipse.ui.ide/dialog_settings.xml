@@ -37,6 +37,7 @@
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/donghakang/Documents/Web/Server/step11_imageBoard"/>
 			<item value="/Users/donghakang/Documents/Web/Server/step09_myBatis"/>
 			<item value="/Users/donghakang/Documents/Web/Server/step08_myBatis"/>
 			<item value=""/>
@@ -46,5 +47,12 @@
 			<item value=""/>
 			<item value="/Users/donghakang/Downloads/5.ProductProject.zip"/>
 		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="665"/>
+		<item key="DIALOG_Y_ORIGIN" value="276"/>
+		<item key="DIALOG_WIDTH" value="590"/>
+		<item key="DIALOG_HEIGHT" value="528"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
 </section>
