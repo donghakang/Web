@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Proper"/>
+		<item key="selection" value="&apos;"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>
+			<item value="&quot;"/>
+			<item value="pwd"/>
+			<item value="boardDto"/>
 			<item value="proper"/>
 			<item value="properi"/>
 			<item value="&#x09;&#x09;&#x09;view = command.requestPro(request, response);"/>
@@ -19,12 +23,10 @@
 			<item value="where"/>
 			<item value="jsp"/>
 			<item value="jsp&apos;"/>
-			<item value="html"/>
-			<item value="inputYn"/>
-			<item value="UTF"/>
-			<item value="UTF-8"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&apos;"/>
+			<item value="dto"/>
 			<item value="regdate"/>
 		</list>
 	</section>

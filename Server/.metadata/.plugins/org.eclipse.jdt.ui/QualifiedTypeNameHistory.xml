@@ -31,15 +31,12 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.sun.corba.se.impl.orb.PropertyOnlyDataCollector"/>
     <fullyQualifiedTypeName name="dao.ProductDao"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.lang.Throwable"/>
     <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpServer"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="controller.CommandAction"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
@@ -48,5 +45,10 @@
     <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
     <fullyQualifiedTypeName name="java.io.Reader"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="controller.CommandAction"/>
+    <fullyQualifiedTypeName name="com.board.dto.BoardDTO"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="com.board.dao.BoardDAO"/>
 </qualifiedTypeNameHistroy>

@@ -2,6 +2,9 @@ package com.board.dao;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -13,6 +16,7 @@ import com.board.dto.BoardDTO;
 public class BoardDAO {
 
 	private static SqlSessionFactory factory;
+	private static BoardDAO instance;
 
 	static {
 		try {
@@ -20,6 +24,7 @@ public class BoardDAO {
 			Reader reader = Resources.getResourceAsReader(resource);
 			factory = new SqlSessionFactoryBuilder().build(reader);
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -41,6 +46,128 @@ public class BoardDAO {
 			session.close();
 		}
 		return n;
+	}
+
+	public List<BoardDTO> getBoardList(Map<String, Integer> map) {
+		SqlSession session = factory.openSession();
+
+		List<BoardDTO> list = session
+				.selectList("mybatis.BoardMapper.getBoardList", map);
+		session.close();
+		return list;
+	}
+
+	public static BoardDAO getInstance() {
+		if (instance == null) {
+			synchronized (BoardDAO.class) {
+				instance = new BoardDAO();
+			}
+		}
+		return instance;
+	}
+
+	public int getTotalArticle() {
+		SqlSession session = factory.openSession();
+		int n = session.selectOne("mybatis.BoardMapper.getTotalArticle");
+		session.close();
+		return n;
+	}
+
+	// 조회수 --------------------------------------------------------
+	public void updateHit(int seq) {
+		SqlSession session = factory.openSession();
+
+		int n = 0;
+
+		try {
+			n = session.insert("mybatis.BoardMapper.updateHit", seq);
+			if (n > 0) {
+				session.commit();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			session.close();
+		}
+
+	}
+
+	// seq에 해당하는 데이터 가져오기 -----------------------------------
+	public BoardDTO getBoard(int seq) {
+		SqlSession session = factory.openSession();
+		BoardDTO dto = session.selectOne("mybatis.BoardMapper.getBoard", seq);
+		session.close();
+		return dto;
+	}
+
+	// 수정 --------------------------------------------------------
+	public void boardUpdate(BoardDTO dto) {
+		SqlSession session = factory.openSession();
+
+		int n = 0;
+
+		try {
+			n = session.insert("mybatis.BoardMapper.boardUpdate", dto);
+			if (n > 0) {
+				session.commit();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			session.close();
+		}
+
+	}
+	// 삭제 --------------------------------------------------------
+	public void boardDelete(int seq) {
+		SqlSession session = factory.openSession();
+
+		int n = 0;
+
+		try {
+			n = session.delete("mybatis.BoardMapper.boardDelete", seq);
+			if (n > 0) {
+				session.commit();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			session.close();
+		}
+	}
+
+	// 답글 --------------------------------------------------------
+	public void boardReply(BoardDTO dto) {
+		BoardDTO pDto = this.getBoard(dto.getPseq()); // 원글
+
+		// - 답글 추가
+		// step(글순서): update----------------------
+		SqlSession session = factory.openSession();
+		int n = 0;
+
+		Map<String, Integer> map = new HashMap<>();
+		map.put("ref", pDto.getRef());
+		map.put("step", pDto.getStep());
+
+		try {
+			dto.setRef(pDto.getRef()); // 그룹번호
+			dto.setLev(pDto.getLev() + 1); // 단계(들여쓰기)
+			dto.setStep(pDto.getStep() + 1); // 글순서
+			dto.setSeq(pDto.getSeq()); // 원글 번호
+
+			n = session.update("mybatis.BoardMapper.boardUpdateStep", map);
+
+			if (n > 0)
+				session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		} finally {
+			session.close();
+		}
 	}
 
 }

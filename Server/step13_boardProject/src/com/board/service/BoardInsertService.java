@@ -33,7 +33,6 @@ public class BoardInsertService implements CommandAction {
 		BoardDAO boardDao = new BoardDAO();
 		int n = boardDao.boardInsert(dto);
 
-		System.out.println(n);
 		request.setAttribute("n", n);
 
 		return "board/boardInsert.jsp";
