@@ -6,4 +6,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+<bean id="messageBean" class="sample1.MessageBeanImpl" c:fruit="melon" p:cost="7500"/>
+
 </beans>

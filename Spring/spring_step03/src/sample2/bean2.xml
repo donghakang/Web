@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+<bean id="f0" class="sample2.Foo" scope="prototype"/>	
+<!-- 기본값: scope="singleton" -->
+	
+<bean id="f1" class="sample2.Foo" c:str="테스트"/>
+<bean id="f2" class="sample2.Foo" c:str="Korea" c:n="100"/>
+<bean id="f3" class="sample2.Foo" c:str="헬로우" c:n="50" c:isTrue="false"/>
+<bean id="f4" class="sample2.Foo" c:n="10" c:str="스프링" c:isTrue="true"/>
+<bean id="f5" class="sample2.Foo" c:bar-ref="bar"/>
+
+<bean id="bar" class="sample2.Bar"/>
+
+</beans>
+
+<!-- 
+>> scope="singleton"
+** Container 초기화 작업 **
+sample2.Foo@1329eff
+sample2.Foo@1329eff
+sample2.Foo@1329eff 
+
+>> scope="prototype"
+** Container 초기화 작업 **
+default constructor
+sample2.Foo@1329eff
+default constructor
+sample2.Foo@6497b078
+default constructor
+sample2.Foo@41c2284a
+-->

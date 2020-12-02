@@ -9,6 +9,11 @@
 	<configs>
 		<config>src/sample1/beans1.xml</config>
 		<config>src/sample1/beans2.xml</config>
+		<config>src/sample2/bean1.xml</config>
+		<config>src/sample2/bean2.xml</config>
+		<config>src/sample4/date.xml</config>
+		<config>src/sample6/bean1.xml</config>
+		<config>src/sample6/bean2.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
