@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<bean id="myAdvice" class="aop03.MyAspect"/>
+<bean id="emp" class="aop03.EmpService"/>
+<bean id="customer" class="aop03.CustomerService"/>
+
+<aop:config>
+	<aop:aspect ref="myAdvice">
+		<aop:before method="myBefore" pointcut="execution(* work())"/>
+		<aop:after method="myAfter" pointcut="execution(* work())"/>
+	</aop:aspect>
+</aop:config>
+
+</beans>
+<!-- AOP : aspectj검색후 pom.xml에 aspectjrt, aspectweaver추가 
+
+	 Spring Bean Configuration추가 : aop
+-->
+
