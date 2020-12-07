@@ -1,0 +1,84 @@
+﻿ojdbc6.jar파일을  
+C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext 밑에 복사
+
+C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib밑에 ojdbc6.jar파일 있음
+
+
+Database Developer설치
+Help -> Install New software
+Name: Database  Developer
+url: http://download.eclipse.org/releases/neon
+----------------------------------------------------------------------------------------------------
+spring_step05_jdbc   -- Java Project  -> Configure -> Convert to Maven Project
+   src
+     test01
+        FirstJdbcDao.java         --interface
+        FirstJdbcDaoImpl.java
+        JdbcExample1.java   --전체출력
+        JdbcExample2.java   --추가
+        JdbcExample3.java   --삭제
+        applicationContext.xml
+     test02
+        FirstJdbcDao.java
+        FirstJdbcDaoImpl.java
+        JdbcExample4.java     -- 전체출력
+        JdbcExample5.java     -- 검색
+        JdbcExample6.java     -- 수정  
+        GoodsEntity.java 
+        applicationContext.xml  
+        jdbc.properties
+    test03
+        test01, test02를 복사한후 수정    
+     goodsinfo.sql  
+     
+     test04    //myBatis와 연동
+       GoodsEntity.java
+       SqlMapClientFactory.java
+       JdbcExample1.java           --- main
+       JdbcExample2.java           --- main
+       JdbcExample3.java           --- main
+       JdbcExample4.java           --- main
+       JdbcExample5.java           --- main
+       JdbcExample6.java           --- main
+       applicationContext.xml
+       jdbc.properties     --file
+       goods-mapping.xml   --xml파일
+       mybatis-config.xml  --xml파일
+       beans.xml   -- beans, p 추가
+        
+===================================================
+pom.xml에 추가
+
+<!-- Spring Context -->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>5.0.14.RELEASE</version>
+</dependency>
+
+<!-- JDBC --> 
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>5.0.14.RELEASE</version>
+</dependency>
+---------------------------------------------------------
+<!-- myBatis -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.3.1</version>
+</dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+   

@@ -41,8 +41,6 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.login.dao.LoginDAO"/>
-    <fullyQualifiedTypeName name="com.login.dto.LoginDTO"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
     <fullyQualifiedTypeName name="java.io.Reader"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="controller.CommandAction"/>
@@ -51,4 +49,6 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="com.board.dao.BoardDAO"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="com.login.dto.LoginDTO"/>
 </qualifiedTypeNameHistroy>

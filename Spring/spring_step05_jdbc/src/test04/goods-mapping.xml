@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.goodsMapper">
+	<select id="listGoods" resultType="test04.GoodsEntity">
+		<![CDATA[
+			SELECT * FROM GOODSINFO
+		]]>
+	</select>
+
+	<insert id="insertGoods" parameterType="test04.GoodsEntity">
+		<![CDATA[
+			INSERT INTO GOODSINFO(CODE, NAME, PRICE, MAKER)
+			VALUES(
+			#{code}, #{name}, #{price}, #{maker})
+		]]>
+	</insert>
+	
+	<delete id="deleteGoods" parameterType="java.lang.String">
+		<![CDATA[
+			DELETE FROM GOODSINFO WHERE NAME=#{name}
+		]]>
+	</delete>
+	
+	<select id="selectGoodsByCodeAndPriceAndMaker" parameterType="hashmap" resultType="test04.GoodsEntity">
+		<![CDATA[
+			SELECT * FROM GOODSINFO
+			WHERE CODE LIKE #{code}
+				  AND PRICE < #{price}
+				  AND MAKER=#{maker}
+		]]>
+	</select>
+	
+	<select id="findGoods" parameterType="java.lang.String" resultType="test04.GoodsEntity">
+		<![CDATA[
+			SELECT * FROM GOODSINFO
+			WHERE CODE=#{code}
+		]]>
+	</select>
+	
+	<update id="updateGoods" parameterType="test04.GoodsEntity">
+		<![CDATA[
+			UPDATE GOODSINFO SET
+			NAME=#{name},
+			PRICE=#{price},
+			MAKER=#{maker}
+			WHERE CODE=#{code}
+		]]>
+	</update>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 추가 -->
+<bean id="entity1" class="test04.GoodsEntity" p:code="p0010" p:name="python정복" 
+                                              p:price="25000" p:maker="혜지원" />
+
+<!-- 수정-->
+<bean id="entity2" class="test04.GoodsEntity" p:code="p0001" p:name="R프로그래밍" 
+                                              p:price="15000" p:maker="남가람북스" />
+
+</beans>
