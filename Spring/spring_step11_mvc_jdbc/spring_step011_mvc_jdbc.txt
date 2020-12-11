@@ -1,0 +1,80 @@
+﻿[ModelAndView와 String을 이용하는 방법]
+================================================================
+spring_step11_mvc_jdbc   --- Dynamic Web Project
+                        dynamic web module version : 4.0
+                        context root : edu
+                        content directory : web
+                        Generate web.xml  deployment descriptor(체크)                        
+                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+Help - Install New Software 클릭 
+http://download.eclipse.org/releases/neon
+-------------------------------------------------------------
+src
+   controller
+        UserController.java  
+   model
+        UserDao.java
+        UserService.java
+   entity     
+        User.java
+web
+   WEB-INF
+        lib
+           standard.jar
+           jstl.jar
+            
+        table_schema
+            user1.sql
+        view
+             list.jsp
+             insert.jsp
+        applicationContext.xml    --beans, context, p체크
+        mvc-servlet.xml          --beans, context 체크      
+    index.jsp
+         
+ ========================================
+ <dependencies>
+  		<!-- Spring Web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Web MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Context -->	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- JDBC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.0.14.RELEASE</version>
+		</dependency>
+  </dependencies>        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          

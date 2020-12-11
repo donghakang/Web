@@ -1,0 +1,89 @@
+[mybatis를 이용하는 방법]
+=========================================================================
+spring_step12_mvc_mybatis   --- Dynamic Web Project
+		                        dynamic web module version : 4.0
+		                        context root : edu
+		                        content directory : web
+		                        Generate web.xml  deployment descriptor(체크)                        
+                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+
+src
+   controller
+        UserController.java  
+   model
+        UserDao.java
+        UserService.java
+   entity     
+        User.java
+   mybatis
+       user-mapping.xml    -- xml
+       mybatis-config.xml  -- xml    
+web
+   WEB-INF
+        view
+             list.jsp
+             insert.jsp
+        applicationContext.xml    --beans, context, p체크
+        mvc-servlet.xml          --beans, context 체크      
+    index.jsp
+         
+ ========================================
+ <dependencies>
+  		<!-- Spring Web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Web MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Context -->	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- JDBC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.0.14.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring myBatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+		
+		<!-- mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.4.6</version>
+		</dependency>
+  </dependencies>        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          

@@ -1,0 +1,42 @@
+spring_step08_mvc   --- Dynamic Web Project
+                        dynamic web module version : 4.0
+                        context root : edu
+                        content directory : web
+                        Generate web.xml  deployment descriptor(체크)                        
+                                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+src
+  controller
+    HelloController.java
+  model
+	HelloDao.java
+	HelloService.java	
+
+web
+    index.html
+    WEB-INF
+       web.xml
+       mvc2-servlet.xml            -- beans,  context체크
+       applicationContext.xml      -- beans,  context체크
+       view
+          hello.jsp
+===========================================================
+@Component : 컴포넌트클래스
+@Controller : mvc에서 컨트롤러 클래스
+@Service : Service Layer의 클래스
+@Repository : Data Access Object클래스
+@Autowired : Autowired 어노테이션이 붙은 인스턴스 변수는 해당 변수 타입과 일치하는 컨텍스트 내의 
+빈을 찾아 인스턴스 변수에 주입해 준다. 의존성 주입을 위해선 생성자나 setter가 필요한데 
+이 어노테이션을 사용할 경우 없어도 가능하다
+
+
+
+
+
+
+
+
+
+
+
+

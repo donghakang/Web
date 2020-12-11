@@ -37,6 +37,7 @@
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/donghakang/Documents/OatJang/test/ex01"/>
 			<item value="/Users/donghakang/Documents/Web/Server/step07_JSTLProject"/>
 			<item value="/Users/donghakang/Documents/Web/Server/step03_JSPProject"/>
 			<item value="/Users/donghakang/Documents/Web/Server/step13_boardProject"/>
@@ -46,8 +47,8 @@
 			<item value=""/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value="/Users/donghakang/Documents/Interactive-Web/practice/maps/ex01/WebContent/index.jsp"/>
 			<item value=""/>
+			<item value="/Users/donghakang/Documents/Interactive-Web/practice/maps/ex01/WebContent/index.jsp"/>
 			<item value="/Users/donghakang/Documents/Web/Server/MyBatisProject/web/List.jsp"/>
 			<item value="/Users/donghakang/Downloads/5.ProductProject.zip"/>
 		</list>
