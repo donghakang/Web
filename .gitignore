@@ -4,3 +4,7 @@ note/
 tmp/
 *.zip
 /build/
+
+*/.metadata
+
+Server/.metadata
