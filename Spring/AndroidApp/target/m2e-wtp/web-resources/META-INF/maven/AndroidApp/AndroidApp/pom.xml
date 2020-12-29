@@ -48,12 +48,21 @@
 			<version>5.0.14.RELEASE</version>
 		</dependency>
 
+		<!-- JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
+		<!-- JSON -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20200518</version>
+		</dependency>
+		
+		
 		<!-- JDBC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
