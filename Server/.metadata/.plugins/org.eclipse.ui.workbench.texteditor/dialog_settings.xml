@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="map"/>
+		<item key="selection" value="CommentBox"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="map"/>
-			<item value="=="/>
-			<item value="console.log"/>
-			<item value="console.log(coords)"/>
-			<item value="coords"/>
-			<item value="TITLE"/>
-			<item value="toLower"/>
-			<item value="to"/>
-			<item value="pw"/>
-			<item value="uid"/>
-			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;"/>
-			<item value="&quot;"/>
-			<item value="pwd"/>
-			<item value="boardDto"/>
-			<item value="proper"/>
+			<item value="commentBox"/>
+			<item value="board"/>
+			<item value="board_main"/>
+			<item value="ArticleContentBox"/>
+			<item value="10px"/>
+			<item value="10ㅔㅌ"/>
+			<item value="setClear"/>
+			<item value="logo"/>
+			<item value="img_item"/>
+			<item value="img_items"/>
+			<item value="img_tiems"/>
+			<item value="wraps"/>
+			<item value="alert(&quot;a"/>
+			<item value="alert(&quot;"/>
+			<item value="alert("/>
 		</list>
 		<list key="replacehistory">
+			<item value="selProductFile"/>
+			<item value="5b3216"/>
+			<item value=""/>
+			<item value="nickname"/>
+			<item value="/oatjang/image/"/>
+			<item value="/oatjang/image"/>
+			<item value="userId"/>
 			<item value="==="/>
 			<item value="userid"/>
 			<item value="&apos;"/>
@@ -33,8 +40,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="837"/>
-		<item key="DIALOG_Y_ORIGIN" value="205"/>
+		<item key="DIALOG_X_ORIGIN" value="1526"/>
+		<item key="DIALOG_Y_ORIGIN" value="465"/>
 		<item key="DIALOG_WIDTH" value="294"/>
 		<item key="DIALOG_HEIGHT" value="408"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
